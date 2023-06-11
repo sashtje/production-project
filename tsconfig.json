@@ -13,6 +13,8 @@
     // компилятор будет обрабатывать не только ts файлы, но и js
     "allowJs": true,
     "moduleResolution": "node",
+    // для абсолютного импорта
+    "baseUrl": ".",
     // позволяет делать привычные импорты через import вместо require
     "esModuleInterop": true,
     // позволяют делать импорт import path from path вместо * as path даже если у пакета нет дефолтного импорта
