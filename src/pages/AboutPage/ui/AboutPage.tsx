@@ -1,6 +1,7 @@
+import { VFC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const AboutPage = () => {
+export const AboutPage: VFC = () => {
   const { t } = useTranslation('about');
 
   return (
