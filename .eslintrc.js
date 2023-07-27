@@ -39,6 +39,7 @@ module.exports = {
       ignoreComments: true,
       code: 100,
     }],
+    'linebreak-style': ['error', 'unix'],
   },
   globals: {
     __IS_DEV__: true,
