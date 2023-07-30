@@ -2,12 +2,8 @@ import { Suspense } from 'react';
 
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
-
 import { Navbar, Sidebar } from 'widgets';
-
 import { classNames } from 'shared/lib/classNames';
-
-import './styles/index.scss';
 
 export function App() {
   const { theme } = useTheme();
