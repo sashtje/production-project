@@ -5,5 +5,7 @@
   "Обновить страницу": "Refresh the page",
   "throw error": "throw error",
   "Короткий язык": "En",
-  "Войти": "Login"
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }
