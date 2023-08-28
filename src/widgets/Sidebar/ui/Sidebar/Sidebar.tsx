@@ -1,16 +1,13 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames';
 import {
-  AppLink, Button, LangSwitcher, ThemeSwitcher,
+  Button, LangSwitcher, ThemeSwitcher,
 } from 'shared/ui';
 import { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button';
-import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
-import { RoutePath } from 'shared/config/routerConfig/routerConfig';
 
-import MainIcon from 'shared/assets/icons/main-20-20.svg';
-import AboutIcon from 'shared/assets/icons/about-20-20.svg';
+import { sidebarItemsList } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 import cls from './Sidebar.module.scss';
 
@@ -18,12 +15,10 @@ interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
-  const { t } = useTranslation();
-  const { t: tMain } = useTranslation('main');
-  const { t: tAbout } = useTranslation('about');
+  const [test, setTest] = useState(0);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -47,29 +42,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Button>
 
       <div className={cls.items}>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.main}
-          className={cls.item}
-        >
-          <MainIcon className={cls.icon} />
-
-          <span className={cls.link}>
-            {tMain('Главная страница')}
-          </span>
-        </AppLink>
-
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.about}
-          className={cls.item}
-        >
-          <AboutIcon className={cls.icon} />
-
-          <span className={cls.link}>
-            {tAbout('О сайте')}
-          </span>
-        </AppLink>
+        {sidebarItemsList.map((item) => (
+          <SidebarItem
+            key={item.path}
+            item={item}
+            collapsed={collapsed}
+          />
+        ))}
       </div>
 
       <div className={cls.switchers}>
@@ -78,4 +57,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
     </div>
   );
-};
+});
+
+Sidebar.displayName = 'Sidebar';
