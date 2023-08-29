@@ -2,7 +2,7 @@ import React, {
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames';
+import { classNames, Mods } from 'shared/lib/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 
 import cls from './Modal.module.scss';
@@ -68,7 +68,7 @@ export const Modal = (props: ModalProps) => {
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };

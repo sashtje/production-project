@@ -12,6 +12,7 @@
     "jsx": "react-jsx",
     // компилятор будет обрабатывать не только ts файлы, но и js
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     // для абсолютного импорта
     "baseUrl": ".",
