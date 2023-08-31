@@ -2,7 +2,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/tests/avatar.png';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -26,7 +25,7 @@ Primary.args = {
     lastname: 'Black',
     currency: Currency.EUR,
     city: 'Munich',
-    avatar,
+    avatar: 'https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp',
   },
 };
 
