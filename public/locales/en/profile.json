@@ -12,5 +12,10 @@
   "Имя пользователя": "Username",
   "Аватар": "Avatar",
   "Валюта": "Currency",
-  "Страна": "Country"
+  "Страна": "Country",
+  "Ошибка сервера при сохранении": "Server error on save",
+  "Нет данных": "No data",
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректная страна": "Incorrect country"
 }
