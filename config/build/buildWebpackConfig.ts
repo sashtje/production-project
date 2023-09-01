@@ -17,6 +17,8 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       filename: '[name].[contenthash].js',
       path: build,
       clean: true,
+      // чтобы запрашивал чанки из корня
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: {
