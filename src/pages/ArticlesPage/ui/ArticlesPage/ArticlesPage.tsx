@@ -12,7 +12,7 @@ interface ArticlesPageProps {
 export const ArticlesPage = memo((props: ArticlesPageProps) => {
   const { className } = props;
 
-  const { t } = useTranslation('article');
+  const { t } = useTranslation('articles');
 
   return (
     <div className={classNames(cls.articlesPage, {}, [className])}>
