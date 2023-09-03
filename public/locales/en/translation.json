@@ -12,5 +12,7 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Authorization form",
   "Неверный логин или пароль": "Wrong login or password",
-  "Выйти": "Exit"
+  "Выйти": "Exit",
+  "Комментарии отсутствуют": "No comments",
+  "Аватар": "Avatar"
 }
