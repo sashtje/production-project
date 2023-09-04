@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
@@ -20,6 +21,7 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -41,6 +43,7 @@ export const ProfilePage = (props: ProfilePageProps) => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{id: string}>();
 
   const validateErrorTranslates = useMemo(() => ({
     [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
@@ -50,11 +53,9 @@ export const ProfilePage = (props: ProfilePageProps) => {
     [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректная страна'),
   }), [t]);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData(id));
+  }, [id]);
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));

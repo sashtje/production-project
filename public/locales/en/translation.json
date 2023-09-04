@@ -14,5 +14,7 @@
   "Неверный логин или пароль": "Wrong login or password",
   "Выйти": "Exit",
   "Комментарии отсутствуют": "No comments",
-  "Аватар": "Avatar"
+  "Аватар": "Avatar",
+  "Введите текст комментария": "Enter comment text",
+  "Отправить": "Send"
 }

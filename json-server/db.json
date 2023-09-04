@@ -29,7 +29,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "01.09.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -110,6 +112,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "text": "Test",
+      "articleId": "1",
+      "userId": "1",
+      "id": "_Hn-daa"
+    },
+    {
+      "text": "Hello",
+      "articleId": "1",
+      "userId": "2",
+      "id": "uX1-jtx"
+    },
+    {
+      "text": "Это замечательная статья, спасибо!",
+      "articleId": "1",
+      "userId": "2",
+      "id": "2FVtaZd"
     }
   ],
   "users": [
@@ -128,14 +148,28 @@
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   ],
-  "profile": {
-    "first": "Sasha",
-    "lastname": "James",
-    "age": 20,
-    "currency": "USD",
-    "country": "Armenia",
-    "city": "New York",
-    "username": "admin",
-    "avatar": "https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Sasha",
+      "lastname": "James",
+      "age": 20,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "New York",
+      "username": "admin",
+      "avatar": "https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp"
+    },
+    {
+      "id": "2",
+      "first": "John",
+      "lastname": "James",
+      "age": 33,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "New York",
+      "username": "user",
+      "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
+    }
+  ]
 }
