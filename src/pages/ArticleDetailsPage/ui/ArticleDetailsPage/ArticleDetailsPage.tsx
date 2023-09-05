@@ -1,16 +1,18 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
 import { Text } from 'shared/ui/Text';
+import { Button } from 'shared/ui';
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
+import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
 
 import {
   fetchCommentsByArticleId,
@@ -49,6 +51,11 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     dispatch(addCommentForArticle(textComment));
   }, [dispatch]);
 
+  const navigate = useNavigate();
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath[AppRoutes.ARTICLES]);
+  }, [navigate]);
+
   if (!id) {
     return (
       <div className={classNames(cls.articleDetailsPage, {}, [className])}>
@@ -60,6 +67,8 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducersList} removeAfterUnmount>
       <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+        <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+
         <ArticleDetails id={id} />
 
         <Text
