@@ -7,21 +7,16 @@ import { routerConfig, AppRoutesProps } from 'shared/config/routerConfig';
 import { RequireAuth } from './RequireAuth';
 
 export const AppRouter = memo(() => {
-  const renderWithWrapper = useCallback(({ path, element, authOnly }: AppRoutesProps) => {
-    const routeElement = (
-      <div className="page-wrapper">
-        {element}
-      </div>
-    );
-
-    return (
+  const renderWithWrapper = useCallback(
+    ({ path, element, authOnly }: AppRoutesProps) => (
       <Route
         key={path}
         path={path}
-        element={authOnly ? <RequireAuth>{routeElement}</RequireAuth> : routeElement}
+        element={authOnly ? <RequireAuth>{element}</RequireAuth> : element}
       />
-    );
-  }, []);
+    ),
+    [],
+  );
 
   return (
     <Suspense fallback={<PageLoader />}>

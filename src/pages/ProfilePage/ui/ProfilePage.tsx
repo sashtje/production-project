@@ -22,6 +22,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -95,7 +96,7 @@ export const ProfilePage = (props: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         <ProfilePageHeader />
 
         {!!validateErrors?.length && validateErrors.map((err) => (
@@ -120,7 +121,7 @@ export const ProfilePage = (props: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

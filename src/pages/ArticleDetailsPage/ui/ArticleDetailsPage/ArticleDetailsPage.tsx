@@ -13,6 +13,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
+import { Page } from 'shared/ui/Page';
 
 import {
   fetchCommentsByArticleId,
@@ -58,15 +59,15 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducersList} removeAfterUnmount>
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
 
         <ArticleDetails id={id} />
@@ -82,7 +83,7 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });
