@@ -13,7 +13,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 import {
   fetchCommentsByArticleId,

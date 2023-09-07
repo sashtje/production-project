@@ -5,21 +5,24 @@ import {
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
+import { uiReducer } from 'features/UI';
 
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+
+const syncReducers: ReducersMapObject<StateSchema> = {
+  counter: counterReducer,
+  user: userReducer,
+  ui: uiReducer,
+};
 
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
-  const rootReducers: ReducersMapObject<StateSchema> = !asyncReducers ? {
-    counter: counterReducer,
-    user: userReducer,
-  } : {
+  const rootReducers: ReducersMapObject<StateSchema> = !asyncReducers ? syncReducers : {
     ...asyncReducers,
-    counter: counterReducer,
-    user: userReducer,
+    ...syncReducers,
   };
 
   const reducerManager = createReducerManager(rootReducers);

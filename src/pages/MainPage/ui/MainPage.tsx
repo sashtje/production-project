@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 export const MainPage: VFC = () => {
   const { t } = useTranslation('main');
