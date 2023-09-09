@@ -4,5 +4,13 @@
   "Articles page": "Articles",
   "Комментарии": "Comments",
   "Читать далее": "Read more...",
-  "Назад к списку": "Back"
+  "Назад к списку": "Back",
+  "Сортировать ПО": "Sort by",
+  "Поиск": "Search",
+  "по": "by",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "дате создания": "creation date",
+  "названию": "title",
+  "просмотрам": "views"
 }
