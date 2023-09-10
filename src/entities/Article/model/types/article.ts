@@ -52,6 +52,7 @@ export interface Article {
   id: string;
   title: string;
   user: User;
+  userId?: string;
   subtitle: string;
   img: string;
   views: number;
