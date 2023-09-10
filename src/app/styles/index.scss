@@ -9,6 +9,11 @@ body {
   color: var(--primary-color);
 }
 
+* {
+  scrollbar-color: var(--card-bg) var(--inverted-primary-color);
+  scrollbar-width: 10px;
+}
+
 .app {
   background: var(--bg-color);
   min-height: 100vh;
@@ -16,4 +21,19 @@ body {
 
 .content-page {
   display: flex;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color);
+  border-radius: 20px;
+  border: 3px solid var(--primary-color);
 }
