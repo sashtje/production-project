@@ -88,7 +88,6 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
           className={cls.recommendations}
           articles={recommendations}
           isLoading={recommendationsIsLoading}
-          /* eslint-disable-next-line i18next/no-literal-string */
           target="_blank"
         />
 
