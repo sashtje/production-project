@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'eslint-plugin-fsd-checker',
   ],
   rules: {
     indent: [2, 2],
@@ -52,6 +53,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
+    'fsd-checker/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { article } from 'entities/Article/mocks/data';
-import { ArticleView } from 'entities/Article';
+import { article } from '../../mocks/data';
+import { ArticleView } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
 export default {
