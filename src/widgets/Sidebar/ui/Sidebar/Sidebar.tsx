@@ -5,11 +5,11 @@ import { classNames } from 'shared/lib/classNames';
 import {
   Button, LangSwitcher, ThemeSwitcher,
 } from 'shared/ui';
-import { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { ButtonSize, ButtonTheme } from 'shared/ui/Button';
+import { VStack } from 'shared/ui/Stack';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -41,7 +41,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         {collapsed ? '>' : '<'}
       </Button>
 
-      <div className={cls.items}>
+      <VStack gap="8" className={cls.items}>
         {sidebarItemsList.map((item) => (
           <SidebarItem
             key={item.path}
@@ -49,7 +49,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             collapsed={collapsed}
           />
         ))}
-      </div>
+      </VStack>
 
       <div className={cls.switchers}>
         <ThemeSwitcher />
