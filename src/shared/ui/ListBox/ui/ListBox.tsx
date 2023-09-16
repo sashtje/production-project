@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Listbox as HListBox } from '@headlessui/react';
 
 import { classNames } from 'shared/lib/classNames';
-import { HStack } from '../../Stack';
+import { DropdownDirection } from 'shared/types/ui';
 
+import { HStack } from '../../Stack';
 import { Button } from '../../Button';
 import cls from './ListBox.module.scss';
 
@@ -13,8 +14,6 @@ export interface ListBoxItem {
   content: ReactNode;
   disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
   className?: string;
@@ -34,7 +33,7 @@ export const ListBox = (props: ListBoxProps) => {
     value,
     defaultValue,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom-left',
     label,
     onChange,
   } = props;

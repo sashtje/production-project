@@ -1,21 +1,24 @@
-.listBox {
+.dropdown {
   position: relative;
 }
 
-.trigger {
+.btn {
   background: none;
-  border: none;
   outline-color: transparent;
-  padding: 0;
+  border: none;
   margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
-.options {
-  background: var(--listbox-bg);
+.menu {
+  background: var(--card-bg);
   position: absolute;
   z-index: 1000;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px var(--listbox-bg);
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
 
   &.top-left {
     bottom: 100%;
@@ -37,13 +40,13 @@
 }
 
 .item {
-  padding: 10px 20px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  background: none;
+  outline-color: transparent;
+  color: var(--primary-color);
   cursor: pointer;
-}
-
-.disabled {
-  cursor: default;
-  opacity: 0.5;
 }
 
 .active {
