@@ -18,5 +18,6 @@
   "Имя и фамилия обязательны": "First and last name are required",
   "Некорректный возраст": "Incorrect age",
   "Некорректная страна": "Incorrect country",
-  "Profile page": "Profile"
+  "Profile page": "Profile",
+  "Профиль не найден": "Profile not found"
 }

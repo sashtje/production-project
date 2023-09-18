@@ -8,6 +8,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comment';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 
 import {
   fetchCommentsByArticleId,
@@ -39,7 +40,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   }, [id]);
 
   return (
-    <div className={classNames('', {}, [className])}>
+    <VStack gap="16" max className={classNames('', {}, [className])}>
       <Text
         size={TextSize.L}
         title={t('Комментарии')}
@@ -49,7 +50,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         isLoading={commentsIsLoading}
         comments={comments}
       />
-    </div>
+    </VStack>
   );
 });
 
