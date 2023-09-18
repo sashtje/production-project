@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
 import { Text, TextSize } from 'shared/ui/Text';
-import { ArticleDetails, ArticleList } from 'entities/Article';
+import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -13,20 +13,14 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page';
 import { VStack } from 'shared/ui/Stack';
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slices';
-import {
-  fetchArticleRecommendations,
-} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations/recommendations';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
-import {
-  getArticleRecommendations,
-} from '../../model/slices/articleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -47,12 +41,8 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   // const error = useSelector(getArticleCommentsError);
 
-  const recommendations = useSelector(getArticleRecommendations.selectAll);
-  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchArticleRecommendations());
   }, [id]);
 
   const onSendComment = useCallback((textComment: string) => {
@@ -75,17 +65,7 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
           <ArticleDetails id={id} />
 
-          <Text
-            size={TextSize.L}
-            title={t('Рекомендуем')}
-            className={cls.commentTitle}
-          />
-          <ArticleList
-            className={cls.recommendations}
-            articles={recommendations}
-            isLoading={recommendationsIsLoading}
-            target="_blank"
-          />
+          <ArticleRecommendationsList />
 
           <Text
             size={TextSize.L}
