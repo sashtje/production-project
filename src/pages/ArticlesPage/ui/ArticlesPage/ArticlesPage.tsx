@@ -1,19 +1,17 @@
 import { memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 import { classNames } from 'shared/lib/classNames';
-import { ArticleList } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
-import { ArticlesPageFilters } from '../../ui/ArticlesPageFilters/ArticlesPageFilters';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlesPageFilters } from '../../ui/ArticlesPageFilters/ArticlesPageFilters';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
-import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -27,19 +25,15 @@ const reducers: ReducersList = {
 export const ArticlesPage = memo((props: ArticlesPageProps) => {
   const { className } = props;
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-
-  const isLoading = useSelector(getArticlesPageIsLoading);
-  const view = useSelector(getArticlesPageView);
   const [searchParams] = useSearchParams();
-
-  const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlesPage());
-  }, [dispatch]);
 
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));
   });
+
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -49,12 +43,7 @@ export const ArticlesPage = memo((props: ArticlesPageProps) => {
       >
         <ArticlesPageFilters />
 
-        <ArticleList
-          isLoading={isLoading}
-          view={view}
-          articles={articles}
-          className={cls.list}
-        />
+        <ArticleInfiniteList />
       </Page>
     </DynamicModuleLoader>
   );
