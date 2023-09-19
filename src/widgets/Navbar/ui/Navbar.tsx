@@ -7,7 +7,9 @@ import { AppLink, Button } from 'shared/ui';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
 import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
 import { Dropdown } from 'shared/ui/Dropdown';
@@ -23,6 +25,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+  const isAdminPanelAvailable = isAdmin || isManager;
+  console.log('isAdmin', isAdmin);
+  console.log('isManager', isManager);
+  console.log('isAdminPanelAvailable', isAdminPanelAvailable);
 
   const dispatch = useDispatch();
 
@@ -58,6 +66,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           className={cls.dropdown}
           direction="bottom-right"
           items={[
+            ...(isAdminPanelAvailable ? [{
+              content: t('Админка'),
+              href: RoutePath.admin_panel,
+            }] : []),
             {
               content: t('Профиль'),
               href: RoutePath.profile + authData.id,
