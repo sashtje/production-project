@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo, RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 
@@ -96,7 +96,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           scrollTop,
         }) => (
           <div
-            ref={registerChild}
+            ref={registerChild as unknown as RefObject<HTMLDivElement>}
             className={classNames(cls.articleList, {}, [className, cls[view]])}
           >
             {virtualized
