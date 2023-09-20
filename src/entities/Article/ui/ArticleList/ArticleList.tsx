@@ -6,9 +6,10 @@ import { Text, TextSize } from 'shared/ui/Text';
 import { classNames } from 'shared/lib/classNames';
 import { PAGE_ID } from 'widgets/Page/ui/Page';
 
+import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {

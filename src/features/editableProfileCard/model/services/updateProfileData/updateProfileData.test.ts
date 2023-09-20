@@ -2,8 +2,8 @@ import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 
+import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 
 const form = {
   id: '1',

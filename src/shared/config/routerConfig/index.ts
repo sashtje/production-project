@@ -1,1 +1,2 @@
-export { routerConfig, AppRoutesProps } from './routerConfig';
+export { routerConfig } from './routerConfig';
+export type { AppRoutesProps } from './types';

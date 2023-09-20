@@ -22,7 +22,8 @@
     // позволяет делать привычные импорты через import вместо require
     "esModuleInterop": true,
     // позволяют делать импорт import path from path вместо * as path даже если у пакета нет дефолтного импорта
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

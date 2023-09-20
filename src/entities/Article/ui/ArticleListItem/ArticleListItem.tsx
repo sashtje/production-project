@@ -11,8 +11,9 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { AppLink } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/routerConfig/routerConfig';
 
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+  Article, ArticleTextBlock,
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';

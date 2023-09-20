@@ -1,5 +1,4 @@
-export { ProfileSchema } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
-export { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
+export type { ProfileSchema } from './model/types/editableProfileCardSchema';
 export {
   getProfileError,
   getProfileIsLoading,
@@ -11,3 +10,4 @@ export {
 export { profileActions } from './model/slice/profileSlice';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 export { EditableProfileCardHeader } from './ui/EditableProfileCardHeader/EditableProfileCardHeader';
+export { ValidateProfileError } from './model/consts/consts';
