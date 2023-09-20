@@ -1,6 +1,5 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
 import { DropdownDirection } from 'shared/types/ui';
@@ -29,8 +28,6 @@ export const Dropdown = memo((props: DropdownProps) => {
     trigger,
     direction = 'bottom-left',
   } = props;
-
-  const { t } = useTranslation();
 
   return (
     <Menu as="div" className={classNames(cls.dropdown, {}, [className])}>

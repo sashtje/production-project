@@ -28,9 +28,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const isAdmin = useSelector(isUserAdmin);
   const isManager = useSelector(isUserManager);
   const isAdminPanelAvailable = isAdmin || isManager;
-  console.log('isAdmin', isAdmin);
-  console.log('isManager', isManager);
-  console.log('isAdminPanelAvailable', isAdminPanelAvailable);
 
   const dispatch = useDispatch();
 
