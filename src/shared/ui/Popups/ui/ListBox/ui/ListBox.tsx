@@ -5,9 +5,10 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
-import { HStack } from '../../Stack';
-import { Button } from '../../Button';
+import { HStack } from '../../../../Stack';
+import { Button } from '../../../../Button';
 import cls from './ListBox.module.scss';
+import commonCls from '../../../styles/popup.module.scss';
 
 export interface ListBoxItem {
   value: string;
@@ -46,17 +47,17 @@ export const ListBox = (props: ListBoxProps) => {
       <HListBox
         disabled={readonly}
         as="div"
-        className={classNames(cls.listBox, {}, [className])}
+        className={classNames(commonCls.popup, {}, [className])}
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button disabled={readonly} className={cls.trigger}>
+        <HListBox.Button disabled={readonly} className={commonCls.trigger}>
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>
         </HListBox.Button>
 
-        <HListBox.Options className={classNames(cls.options, {}, [cls[direction]])}>
+        <HListBox.Options className={classNames(cls.options, {}, [commonCls[direction]])}>
           {items?.map((item) => (
             <HListBox.Option
               key={item.value}
@@ -65,7 +66,14 @@ export const ListBox = (props: ListBoxProps) => {
               as={Fragment}
             >
               {({ active, selected }) => (
-                <li className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled }, [])}>
+                <li className={
+                  classNames(
+                    cls.item,
+                    { [commonCls.active]: active, [commonCls.disabled]: item.disabled },
+                    [],
+                  )
+                }
+                >
                   {selected && '!!!'}
                   {item.content}
                 </li>

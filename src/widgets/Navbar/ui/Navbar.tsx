@@ -12,8 +12,12 @@ import {
 } from 'entities/User';
 import { AppRoutes, RoutePath } from 'shared/config/routerConfig/routerConfig';
 import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
-import { Dropdown } from 'shared/ui/Dropdown';
+import { Dropdown } from 'shared/ui/Popups/ui/Dropdown';
 import { Avatar } from 'shared/ui/Avatar';
+import { HStack } from 'shared/ui/Stack';
+import { Icon } from 'shared/ui/Icon';
+import NotificationIcon from 'shared/assets/icons/notifications-20-20.svg';
+import { Popover } from 'shared/ui/Popups';
 
 import cls from './Navbar.module.scss';
 
@@ -59,25 +63,37 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           {t('Создать статью')}
         </AppLink>
 
-        <Dropdown
-          className={cls.dropdown}
-          direction="bottom-right"
-          items={[
-            ...(isAdminPanelAvailable ? [{
-              content: t('Админка'),
-              href: RoutePath.admin_panel,
-            }] : []),
-            {
-              content: t('Профиль'),
-              href: RoutePath.profile + authData.id,
-            },
-            {
-              content: t('Выйти'),
-              onClick: onLogout,
-            },
-          ]}
-          trigger={<Avatar size={30} src={authData.avatar} />}
-        />
+        <HStack gap="16" className={cls.actions}>
+          <Popover
+            trigger={(
+              <Button theme={ButtonTheme.CLEAR}>
+                <Icon Svg={NotificationIcon} inverted />
+              </Button>
+            )}
+            direction="bottom-right"
+          >
+            ===
+          </Popover>
+
+          <Dropdown
+            direction="bottom-right"
+            items={[
+              ...(isAdminPanelAvailable ? [{
+                content: t('Админка'),
+                href: RoutePath.admin_panel,
+              }] : []),
+              {
+                content: t('Профиль'),
+                href: RoutePath.profile + authData.id,
+              },
+              {
+                content: t('Выйти'),
+                onClick: onLogout,
+              },
+            ]}
+            trigger={<Avatar size={30} src={authData.avatar} />}
+          />
+        </HStack>
       </header>
     );
   }
