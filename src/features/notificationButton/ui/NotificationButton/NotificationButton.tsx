@@ -1,15 +1,15 @@
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 
-import { classNames } from 'shared/lib/classNames';
-import { NotificationsList } from 'entities/Notification';
-import { Popover } from 'shared/ui/Popups';
-import { Drawer } from 'shared/ui/Drawer';
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
-import NotificationIcon from 'shared/assets/icons/notifications-20-20.svg';
-import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
+import { classNames } from '@/shared/lib/classNames';
+import { NotificationsList } from '@/entities/Notification';
+import { Popover } from '@/shared/ui/Popups';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Button } from '@/shared/ui';
+import { ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import NotificationIcon from '@/shared/assets/icons/notifications-20-20.svg';
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 
 import cls from './NotificationButton.module.scss';
 

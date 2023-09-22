@@ -1,9 +1,9 @@
 import { useCallback, useMemo, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/classNames';
-import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
-import { ListBox } from 'shared/ui/Popups/ui/ListBox';
+import { classNames } from '@/shared/lib/classNames';
+import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
+import { ListBox } from '@/shared/ui/Popups/ui/ListBox';
 
 import { Currency } from '../../model/types/currency';
 

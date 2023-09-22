@@ -2,15 +2,15 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 
-import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from 'entities/User';
-import { HStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button';
+import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from '@/entities/User';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { Button } from '@/shared/ui';
+import { ButtonTheme } from '@/shared/ui/Button';
 
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';

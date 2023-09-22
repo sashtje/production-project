@@ -2,9 +2,9 @@ import { HTMLAttributeAnchorTarget, memo, RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 
-import { Text, TextSize } from 'shared/ui/Text';
-import { classNames } from 'shared/lib/classNames';
-import { PAGE_ID } from 'widgets/Page/ui/Page';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames';
+import { PAGE_ID } from '@/widgets/Page/ui/Page';
 
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';

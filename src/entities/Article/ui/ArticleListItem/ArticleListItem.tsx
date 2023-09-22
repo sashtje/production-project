@@ -1,15 +1,15 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/classNames';
-import { Text } from 'shared/ui/Text';
-import { Card } from 'shared/ui/Card';
-import { Avatar } from 'shared/ui/Avatar';
-import { Button } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
-import { AppLink } from 'shared/ui/AppLink';
-import { RoutePath } from 'shared/config/routerConfig/routerConfig';
+import { classNames } from '@/shared/lib/classNames';
+import { Text } from '@/shared/ui/Text';
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/config/routerConfig/routerConfig';
 
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import {

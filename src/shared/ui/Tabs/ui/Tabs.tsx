@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 
 import { TabItem, TabsProps } from '../types';
 import { Card, CardTheme } from '../../Card';
