@@ -1,23 +1,23 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { classNames, Mods } from 'shared/lib/classNames';
 
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
-import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay';
-import cls from './Drawer.module.scss';
+import { Portal } from '../../Portal';
+import cls from './Modal.module.scss';
 
-interface DrawerProps {
-  className?: string;
-  children: ReactNode;
-  isOpen?: boolean;
-  onClose?: () => void;
-  lazy?: boolean;
+interface ModalProps {
+    className?: string;
+    children?: ReactNode;
+    isOpen?: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Drawer = (props: DrawerProps) => {
+export const Modal = (props: ModalProps) => {
   const {
     className,
     children,
@@ -39,7 +39,7 @@ export const Drawer = (props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.drawer, mods, [className])}>
+      <div className={classNames(cls.modal, mods, [className])}>
         <Overlay onClick={close} />
 
         <div className={cls.content}>
