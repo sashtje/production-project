@@ -8,6 +8,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
+import { ArticleRating } from '@/features/articleRating';
 
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -43,6 +44,8 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
           <ArticleDetailsPageHeader />
 
           <ArticleDetails id={id} />
+
+          <ArticleRating articleId={id} />
 
           <ArticleRecommendationsList />
 
