@@ -7,7 +7,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { ProfileCard } from '@/entities/Profile';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -24,6 +23,7 @@ import {
   getProfileReadonly,
   getProfileValidateErrors,
 } from '../../model/selectors';
+import { AppRoutes } from '@/shared/const/router';
 
 interface EditableProfileCardProps {
   className?: string;

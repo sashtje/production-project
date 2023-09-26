@@ -8,13 +8,13 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button';
 import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
-import { AppRoutes, RoutePath } from '@/shared/config/routerConfig/routerConfig';
 import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 
 import cls from './Navbar.module.scss';
+import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;

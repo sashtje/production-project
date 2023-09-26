@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
-import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
+import { AppRoutes } from '@/shared/const/router';
 
 interface ProfilePageProps {
     className?: string;

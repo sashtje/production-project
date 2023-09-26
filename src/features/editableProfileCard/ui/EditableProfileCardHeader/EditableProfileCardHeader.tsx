@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
 
-import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/Stack';
@@ -17,6 +16,7 @@ import { updateProfileData } from '../../model/services/updateProfileData/update
 import {
   getProfileData, getProfileReadonly,
 } from '../../model/selectors';
+import { AppRoutes } from '@/shared/const/router';
 
 interface EditableProfileCardHeaderProps {
   className?: string;

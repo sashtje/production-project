@@ -27,3 +27,5 @@ root.render(
     </StoreProvider>
   </BrowserRouter>,
 );
+export { RoutePath } from '@/shared/const/router';
+export { AppRoutes } from '@/shared/const/router';

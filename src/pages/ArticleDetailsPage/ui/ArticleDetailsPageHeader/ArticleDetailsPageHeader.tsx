@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/shared/ui';
 import { classNames } from '@/shared/lib/classNames';
-import { AppRoutes, RoutePath } from '@/shared/config/routerConfig/routerConfig';
 import { getArticleDetails } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
 
 import { getCanEditArticle } from '../../model/selectors/article';
+import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
