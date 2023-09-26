@@ -6,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames';
 import { AppLink, Button } from '@/shared/ui';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button';
-import { LoginModal } from '@/features/AuthByUsername';
+import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { AppRoutes, RoutePath } from '@/shared/config/routerConfig/routerConfig';
 import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';

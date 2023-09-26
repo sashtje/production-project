@@ -62,6 +62,7 @@ module.exports = {
     }],
     'fsd-checker/public-api-imports': ['error', {
       alias: '@',
+      testFiles: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.stories.tsx'],
     }],
   },
   globals: {
