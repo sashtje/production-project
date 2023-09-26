@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames';
 import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
-import { EditableProfileCard } from '@/features/editableProfileCard/ui/EditableProfileCard/EditableProfileCard';
+import { EditableProfileCard } from '@/features/editableProfileCard';
 import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
 
 interface ProfilePageProps {

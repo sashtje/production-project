@@ -7,7 +7,8 @@ export {
   getProfileForm,
   getProfileReadonly,
 } from './model/selectors';
-export { profileActions } from './model/slice/profileSlice';
+export { profileActions, profileReducer } from './model/slice/profileSlice';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
+export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 export { EditableProfileCardHeader } from './ui/EditableProfileCardHeader/EditableProfileCardHeader';
 export { ValidateProfileError } from './model/consts/consts';

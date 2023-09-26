@@ -60,6 +60,9 @@ module.exports = {
     'fsd-checker/path-checker': ['error', {
       alias: '@',
     }],
+    'fsd-checker/public-api-imports': ['error', {
+      alias: '@',
+    }],
   },
   globals: {
     __IS_DEV__: true,
