@@ -1,5 +1,5 @@
 import {
-  memo, MutableRefObject, ReactNode, useRef, UIEvent,
+  memo, MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -11,6 +11,7 @@ import { getUIScrollByPath, uiActions } from '@/features/UI';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { PAGE_ID } from '@/shared/const/page';
 
 import cls from './Page.module.scss';
 
@@ -19,8 +20,6 @@ interface PageProps {
   children: ReactNode;
   onScrollEnd?: () => void;
 }
-
-export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
   const {

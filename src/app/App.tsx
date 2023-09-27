@@ -1,10 +1,11 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AppRouter } from '@/app/providers/router';
 import { Navbar, Sidebar } from '@/widgets';
 import { classNames } from '@/shared/lib/classNames';
 import { getUserInited, userActions } from '@/entities/User';
+
+import { AppRouter } from './providers/router';
 
 export function App() {
   const dispatch = useDispatch();

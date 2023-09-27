@@ -64,6 +64,10 @@ module.exports = {
       alias: '@',
       testFiles: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.stories.tsx'],
     }],
+    'fsd-checker/layer-imports': ['error', {
+      alias: '@',
+      ignoreImport: ['**/StoreProvider', '**/testing'],
+    }],
   },
   globals: {
     __IS_DEV__: true,

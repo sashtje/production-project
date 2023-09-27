@@ -4,7 +4,7 @@ import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 
 import { Text, TextSize } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames';
-import { PAGE_ID } from '@/widgets/Page';
+import { PAGE_ID } from '@/shared/const/page';
 
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
