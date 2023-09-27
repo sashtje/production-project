@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
 import { classNames } from '@/shared/lib/classNames';
 import {
   ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
@@ -22,6 +21,7 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPageFilters.module.scss';
+import { SortOrder } from '@/shared/types/sort';
 
 interface ArticlesPageFiltersProps {
   className?: string;

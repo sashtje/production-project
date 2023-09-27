@@ -3,12 +3,11 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
-import { AppLink, Button } from '@/shared/ui';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { ButtonTheme } from '@/shared/ui/Button/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
-import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';

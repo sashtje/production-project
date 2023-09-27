@@ -2,10 +2,10 @@ import { useCallback, useMemo, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
-import { ListBox } from '@/shared/ui/Popups/ui/ListBox';
+import { ListBox } from '@/shared/ui/Popups';
+import { AppRoutes } from '@/shared/const/router';
 
 import { Country } from '../../model/types/country';
-import { AppRoutes } from '@/shared/const/router';
 
 interface CountrySelectProps {
   className?: string;
