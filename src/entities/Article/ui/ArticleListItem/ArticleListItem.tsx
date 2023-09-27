@@ -9,6 +9,7 @@ import { Button } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/const/router';
 
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import {
@@ -16,7 +17,6 @@ import {
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RoutePath } from '@/shared/const/router';
 
 interface ArticleListItemProps {
   className?: string;

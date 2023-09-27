@@ -10,6 +10,7 @@ import {
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types/sort';
 
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
@@ -21,7 +22,6 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPageFilters.module.scss';
-import { SortOrder } from '@/shared/types/sort';
 
 interface ArticlesPageFiltersProps {
   className?: string;

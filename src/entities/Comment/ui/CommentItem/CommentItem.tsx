@@ -7,10 +7,10 @@ import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
 import { VStack } from '@/shared/ui/Stack';
+import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 import cls from './CommentItem.module.scss';
 import { Comment } from '../../model/types/comment';
-import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 interface CommentItemProps {
   className?: string;

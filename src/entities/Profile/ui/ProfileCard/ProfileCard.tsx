@@ -8,10 +8,10 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/Stack';
+import { AppRoutes } from '@/shared/const/router';
 
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
-import { AppRoutes } from '@/shared/const/router';
 
 interface ProfileCardProps {
   className?: string;

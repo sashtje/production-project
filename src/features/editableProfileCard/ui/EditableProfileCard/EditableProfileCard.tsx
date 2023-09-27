@@ -11,6 +11,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { ProfileCard } from '@/entities/Profile';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
+import { AppRoutes } from '@/shared/const/router';
 
 import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -23,7 +24,6 @@ import {
   getProfileReadonly,
   getProfileValidateErrors,
 } from '../../model/selectors';
-import { AppRoutes } from '@/shared/const/router';
 
 interface EditableProfileCardProps {
   className?: string;

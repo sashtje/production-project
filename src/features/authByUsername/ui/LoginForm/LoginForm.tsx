@@ -3,23 +3,20 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames';
-import { Button } from '@/shared/ui';
 import { Input } from '@/shared/ui/Input';
-import { ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Text, TextTheme } from '@/shared/ui/Text';
-
 import {
   DynamicModuleLoader, ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
-
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slices/loginSlice';
-
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {

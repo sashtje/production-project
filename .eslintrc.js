@@ -20,6 +20,7 @@ module.exports = {
     'react-hooks',
     'eslint-plugin-fsd-checker',
     'eslint-plugin-unused-imports',
+    'eslint-plugin-import',
   ],
   rules: {
     indent: [2, 2],
@@ -70,6 +71,17 @@ module.exports = {
       ignoreImport: ['**/StoreProvider', '**/testing'],
     }],
     'unused-imports/no-unused-imports': 'error',
+    'import/order': ['error', {
+      groups: ['builtin', 'external', 'internal'],
+      pathGroups: [
+        {
+          pattern: '@/**',
+          group: 'external',
+          position: 'after',
+        },
+      ],
+      'newlines-between': 'always',
+    }],
   },
   globals: {
     __IS_DEV__: true,

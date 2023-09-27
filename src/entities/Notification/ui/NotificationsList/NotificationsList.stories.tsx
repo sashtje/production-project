@@ -1,8 +1,9 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-
 import withMock from 'storybook-addon-mock';
-import { NotificationsList } from './NotificationsList';
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { NotificationsList } from './NotificationsList';
 
 export default {
   title: 'entities/Notification/NotificationsList',

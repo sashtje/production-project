@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { Button } from '@/shared/ui';
+import { Button } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames';
 import { getArticleDetails } from '@/entities/Article';
 import { HStack } from '@/shared/ui/Stack';
+import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 import { getCanEditArticle } from '../../model/selectors/article';
-import { AppRoutes, RoutePath } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;

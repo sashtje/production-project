@@ -1,7 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Button } from '../../../../Button';
-
 import { Dropdown } from './Dropdown';
 
 export default {
