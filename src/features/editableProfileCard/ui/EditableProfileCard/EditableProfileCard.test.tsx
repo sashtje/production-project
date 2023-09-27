@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
-import { Currency } from '@/entities/Currency';
-import { Country } from '@/entities/Country';
-import { Profile } from '@/entities/Profile';
+import { Currency } from '@/entities/Currency/testing';
+import { Country } from '@/entities/Country/testing';
+import { Profile } from '@/entities/Profile/testing';
 import { $api } from '@/shared/api/api';
 
 import { profileReducer } from '../../model/slice/profileSlice';
