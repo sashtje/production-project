@@ -19,6 +19,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'eslint-plugin-fsd-checker',
+    'eslint-plugin-unused-imports',
   ],
   rules: {
     indent: [2, 2],
@@ -68,6 +69,7 @@ module.exports = {
       alias: '@',
       ignoreImport: ['**/StoreProvider', '**/testing'],
     }],
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,
