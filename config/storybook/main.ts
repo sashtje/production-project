@@ -4,9 +4,15 @@ export default {
   ],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        background: false,
+      },
+    },
     '@storybook/addon-interactions',
     'storybook-addon-mock/register',
+    'storybook-addon-themes',
   ],
   framework: '@storybook/react',
   core: {
