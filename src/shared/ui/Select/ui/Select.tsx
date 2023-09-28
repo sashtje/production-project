@@ -1,11 +1,12 @@
 import { ChangeEvent, useMemo } from 'react';
 
 import { classNames, Mods } from '@/shared/lib/classNames';
+import { typedMemo } from '@/shared/const/common';
 
 import { SelectProps } from '../types';
 import cls from './Select.module.scss';
 
-export const Select = <T extends string>(props: SelectProps<T>) => {
+export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   const {
     className,
     label,
@@ -45,6 +46,4 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
       </select>
     </div>
   );
-};
-
-Select.displayName = 'Select';
+});
