@@ -16,10 +16,6 @@ export function buildBabelLoader(options: BuildBabelLoaderProps) {
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
-          ['i18next-extract', {
-            locales: ['ru', 'en'],
-            keyAsDefaultValue: true,
-          }],
           '@babel/plugin-transform-runtime',
           isTsx && !isDev && [
             babelRemovePropsPlugin,
