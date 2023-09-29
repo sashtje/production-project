@@ -5,8 +5,8 @@ import { Icon } from '@/shared/ui/Icon';
 import { classNames } from '@/shared/lib/classNames';
 import ViewSmallIcon from '@/shared/assets/icons/view-small.svg';
 import ViewBigIcon from '@/shared/assets/icons/view-big.svg';
+import { ArticleView } from '@/entities/Article';
 
-import { ArticleView } from '../../model/consts/consts';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

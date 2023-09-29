@@ -6,8 +6,11 @@ import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
 import { classNames } from '@/shared/lib/classNames';
 import {
-  ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
+  ArticleView, ArticleSortField, ArticleType,
 } from '@/entities/Article';
+import { ArticleViewSelector } from '@/features/articleViewSelector';
+import { ArticleSortSelector } from '@/features/articleSortSelector';
+import { ArticleTypeTabs } from '@/features/articleTypeTabs';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from '@/shared/types/sort';
