@@ -31,6 +31,7 @@ npm run start:dev or npm run start:dev:vite - to launch client and backend part 
 - `npm run storybook` - Running storybook
 - `npm run storybook:build` - Build storybook
 - `npm run prepare` - Pre-commit hooks
+- `npm run postinstall` - Deleting cache in node_modules
 
 ----
 
