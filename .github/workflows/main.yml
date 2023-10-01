@@ -28,15 +28,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+      - name: Install modules
         run: npm ci --force
-      - name: build production project
+      - name: Build production project
         if: always()
         run: npm run build:prod
-      - name: build storybook
+      - name: Build storybook
         if: always()
         run: npm run storybook:build
-      - name: screenshot testing
+      - name: Screenshot testing
         if: always()
         run: npm run test:ui:ci
       - name: Generate HTML report
@@ -66,14 +66,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+      - name: Install modules
         run: npm ci --force
-      - name: linting typescript
+      - name: Linting typescript
         if: always()
         run: npm run lint:ts
-      - name: linting scss
+      - name: Linting scss
         if: always()
         run: npm run lint:scss
-      - name: unit testing
+      - name: Unit testing
         if: always()
         run: npm run test:unit
