@@ -10,6 +10,8 @@ import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteArticlesDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import {
@@ -75,7 +77,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
           <Text title={article.title} className={cls.title} />
           {types}
-          <img src={article.img} alt={article.title} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width="100%" height={250} />}
+            src={article.img}
+            alt={article.title}
+            className={cls.img}
+          />
           {!!textBlock && (
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
           )}
@@ -105,7 +112,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <img
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
             className={cls.img}
             src={article.img}
             alt={article.title}
