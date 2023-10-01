@@ -27,6 +27,9 @@
     "prepare": "husky install",
     "postinstall": "node ./scripts/clear-cache.js"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
