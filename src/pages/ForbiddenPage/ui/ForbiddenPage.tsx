@@ -7,7 +7,7 @@ export const ForbiddenPage: VFC = () => {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page data-testid="ForbiddenPage">
       {t('У Вас нет доступа к этой странице')}
     </Page>
   );

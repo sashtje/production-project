@@ -8,7 +8,7 @@ export const AdminPanelPage: VFC = () => {
 
   return (
     // eslint-disable-next-line i18next/no-literal-string
-    <Page>
+    <Page data-testid="AdminPanelPage">
       AdminPanelPage
     </Page>
   );
