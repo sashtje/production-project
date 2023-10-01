@@ -51,7 +51,7 @@ export const ListBox = (props: ListBoxProps) => {
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button disabled={readonly} className={commonCls.trigger}>
+        <HListBox.Button as="div" className={commonCls.trigger}>
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>

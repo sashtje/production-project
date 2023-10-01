@@ -80,6 +80,14 @@
 
 .disabled {
   opacity: 0.5;
+  fill-opacity: 50%;
+  stroke-opacity: 50%;
+
+  &:hover {
+    opacity: 0.5;
+    fill-opacity: 50%;
+    stroke-opacity: 50%;
+  }
 }
 
 .fullWidth {
