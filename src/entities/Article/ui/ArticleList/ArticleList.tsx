@@ -6,9 +6,9 @@ import { Text, TextSize } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames';
 import { PAGE_ID } from '@/shared/const/page';
 
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleView } from '../../model/consts/consts';
-import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
-import { ArticleListItem } from '../../ui/ArticleListItem/ArticleListItem';
 import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 
