@@ -13,14 +13,14 @@ concurrency:
   cancel-in-progress: true
 jobs:
   pipeline:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
-        node-version: [ 17.4.0 ]
+        node-version: [ 17.x ]
 
     steps:
       - uses: actions/checkout@v2
@@ -62,10 +62,10 @@ jobs:
         uses: actions/deploy-pages@v1
 
   checks:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 17.4.0 ]
+        node-version: [ 17.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
