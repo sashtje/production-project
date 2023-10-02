@@ -18,7 +18,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
-    'eslint-plugin-fsd-checker',
+    // 'eslint-plugin-fsd-checker',
     'eslint-plugin-unused-imports',
     'eslint-plugin-import',
   ],
@@ -59,17 +59,18 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'fsd-checker/path-checker': ['error', {
-      alias: '@',
-    }],
-    'fsd-checker/public-api-imports': ['error', {
-      alias: '@',
-      testFiles: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.stories.tsx'],
-    }],
-    'fsd-checker/layer-imports': ['error', {
-      alias: '@',
-      ignoreImport: ['**/StoreProvider', '**/testing'],
-    }],
+    // I am using this plugin with npm link to test it
+    // 'fsd-checker/path-checker': ['error', {
+    //   alias: '@',
+    // }],
+    // 'fsd-checker/public-api-imports': ['error', {
+    //   alias: '@',
+    //   testFiles: ['**/*.test.*', '**/StoreDecorator.tsx', '**/*.stories.tsx'],
+    // }],
+    // 'fsd-checker/layer-imports': ['error', {
+    //   alias: '@',
+    //   ignoreImport: ['**/StoreProvider', '**/testing'],
+    // }],
     'unused-imports/no-unused-imports': 'error',
     'import/order': ['error', {
       groups: ['builtin', 'external', 'internal'],
