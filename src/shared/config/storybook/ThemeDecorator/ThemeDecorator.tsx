@@ -1,6 +1,6 @@
 import { DecoratorFn } from '@storybook/react';
 
-// eslint-disable-next-line fsd-checker/layer-imports
+// eslint-disable-next-line
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Theme } from '@/shared/const/theme';
 
