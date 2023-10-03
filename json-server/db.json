@@ -799,6 +799,28 @@
       "city": "New York",
       "username": "user",
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Tony",
+      "lastname": "Key",
+      "age": 23,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "New York",
+      "username": "manager",
+      "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
+    },
+    {
+      "id": "4",
+      "first": "Sara",
+      "lastname": "Doe",
+      "age": 41,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "New York",
+      "username": "testuser",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqNiwgTLa4GOFNV2CXioYgjaEEt4K6sd-_BkWgvANyjxNQ_aEcjstLSmmBUWN2W1ODFLU&usqp=CAU"
     }
   ],
   "article-ratings": [

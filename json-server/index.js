@@ -1,6 +1,7 @@
 const fs = require('fs');
-const jsonServer = require('json-server');
 const path = require('path');
+
+const jsonServer = require('json-server');
 const cors = require('cors');
 
 const server = jsonServer.create();
@@ -29,7 +30,7 @@ server.use(async (req, res, next) => {
   next();
 });
 
-// Endpoint for login
+// Endpoint for common
 server.post('/login', (req, res) => {
   const { username, password } = req.body;
 
