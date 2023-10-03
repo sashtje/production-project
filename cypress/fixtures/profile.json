@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "first": "Sara",
+  "lastname": "Doe",
+  "age": 41,
+  "currency": "USD",
+  "country": "Armenia",
+  "city": "New York",
+  "username": "testuser",
+  "avatar": "https://encrypted-tbn0.gstati.com/images?q=tbn:ANd9GcRqNiwgTLa4GOFNV2CXioYgjaEEt4K6sd-_BkWgvANyjxNQ_aEcjstLSmmBUWN2W1ODFLU&usqp=CAU"
+}
