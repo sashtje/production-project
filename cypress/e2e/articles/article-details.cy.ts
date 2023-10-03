@@ -32,6 +32,7 @@ describe('article details testing', () => {
   });
 
   it('leaves a rate', () => {
+    // cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetails.title');
     cy.getByTestId('RatingCard').scrollIntoView();
 

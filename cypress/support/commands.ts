@@ -11,3 +11,12 @@ Cypress.Commands.addAll({
   ...commentsCommands,
   ...ratingCommands,
 });
+// Cypress.Commands.overwrite('intercept', () => {
+//   const { FIXTURE_MODE } = process.env;
+//
+//   if (FIXTURE_MODE === 'READ') {
+//     // read fixtures from existed files
+//   } else if (FIXTURE_MODE === 'WRITE') {
+//     // generate fixture from query in cy.intercept
+//   }
+// });
