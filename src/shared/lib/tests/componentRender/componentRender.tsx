@@ -6,10 +6,10 @@ import { ReducersMapObject } from '@reduxjs/toolkit';
 
 import i18nForTests from '@/shared/config/i18n/i18nForTests';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-// eslint-disable-next-line fsd-checker/layer-imports
+// eslint-disable-next-line
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { Theme } from '@/shared/const/theme';
-// eslint-disable-next-line fsd-checker/layer-imports
+// eslint-disable-next-line
 import '@/app/styles/index.scss';
 
 export interface ComponentRenderOptions {
