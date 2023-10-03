@@ -22,6 +22,7 @@ npm run start:dev or npm run start:dev:vite - to launch client and backend part 
 - `npm run lint:scss` - Running stylelint on style files
 - `npm run lint:scss:fix` - Running stylelint fix on style files
 - `npm run test:unit` - Running unit tests with jest
+- `npm run test:e2e` - Running e2e tests with Cypress
 - `npm run test:ui` - Running screenshots tests with loki
 - `npm run test:ui:ok` - Confirmation of new screenshots
 - `npm run test:ui:ci` - Running screenshots tests in CI

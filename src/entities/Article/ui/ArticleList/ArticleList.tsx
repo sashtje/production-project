@@ -97,6 +97,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           scrollTop,
         }) => (
           <div
+            data-testid="ArticleList"
             ref={registerChild as unknown as RefObject<HTMLDivElement>}
             className={classNames(cls.articleList, {}, [className, cls[view]])}
           >

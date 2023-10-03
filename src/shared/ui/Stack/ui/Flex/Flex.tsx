@@ -30,6 +30,7 @@ export const Flex = (props: FlexProps) => {
     direction,
     gap,
     max,
+    ...otherProps
   } = props;
 
   return (
@@ -43,6 +44,7 @@ export const Flex = (props: FlexProps) => {
           gap && cls[`gap-${gap}`],
           className],
       )}
+      {...otherProps}
     >
       {children}
     </div>

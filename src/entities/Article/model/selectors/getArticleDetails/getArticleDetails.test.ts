@@ -5,7 +5,7 @@ import {
 } from './getArticleDetails';
 
 describe('getArticleDetails.test', () => {
-  test('should return article details data', () => {
+  test('should return articles details data', () => {
     const data = {
       id: '1',
       title: 'subtitle',

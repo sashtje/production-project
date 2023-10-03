@@ -44,7 +44,7 @@ export const CommentItem = memo((props: CommentItemProps) => {
   }
 
   return (
-    <VStack gap="8" max className={classNames(cls.commentItem, {}, [className])}>
+    <VStack data-testid="CommentItem.Content" gap="8" max className={classNames(cls.commentItem, {}, [className])}>
       <AppLink className={cls.header} to={getRouteProfile(comment.user.id)}>
         {comment.user.avatar ? (
           <Avatar
