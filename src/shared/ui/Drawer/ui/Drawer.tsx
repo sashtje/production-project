@@ -1,7 +1,10 @@
 import { ReactNode, useCallback, useEffect } from 'react';
 
 import { classNames } from '@/shared/lib/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
 
 import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay';
@@ -18,13 +21,7 @@ interface DrawerProps {
 const height = window.innerHeight - 100;
 
 const DrawerContent = (props: DrawerProps) => {
-  const {
-    className,
-    children,
-    isOpen,
-    onClose,
-    lazy,
-  } = props;
+  const { className, children, isOpen, onClose, lazy } = props;
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
@@ -40,7 +37,10 @@ const DrawerContent = (props: DrawerProps) => {
 
   const close = (velocity = 0) => {
     api.start({
-      y: height, immediate: false, config: { ...Spring.config.stiff, velocity }, onResolve: onClose,
+      y: height,
+      immediate: false,
+      config: { ...Spring.config.stiff, velocity },
+      onResolve: onClose,
     });
   };
 
@@ -67,7 +67,10 @@ const DrawerContent = (props: DrawerProps) => {
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 
@@ -79,7 +82,11 @@ const DrawerContent = (props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.drawer, { [cls.opened]: isOpen }, [className])}>
+      <div
+        className={classNames(cls.drawer, { [cls.opened]: isOpen }, [
+          className,
+        ])}
+      >
         <Overlay onClick={close} />
 
         <Spring.a.div
@@ -101,9 +108,7 @@ const DrawerAsync = (props: DrawerProps) => {
     return null;
   }
 
-  return (
-    <DrawerContent {...props} />
-  );
+  return <DrawerContent {...props} />;
 };
 
 export const Drawer = (props: DrawerProps) => (

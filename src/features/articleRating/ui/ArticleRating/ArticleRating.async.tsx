@@ -4,9 +4,10 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 
 import { ArticleRatingProps } from './ArticleRating';
 
-const ArticleRatingLazy = lazy(
-  () => import('./ArticleRating')
-    .then((module) => ({ default: module.ArticleRating })),
+const ArticleRatingLazy = lazy(() =>
+  import('./ArticleRating').then((module) => ({
+    default: module.ArticleRating,
+  })),
 );
 
 export const ArticleRatingAsync = (props: ArticleRatingProps) => (

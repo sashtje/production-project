@@ -18,14 +18,11 @@ const form = {
 
 describe('updateProfileData.test', () => {
   test('success update profile', async () => {
-    const thunk = new TestAsyncThunk(
-      updateProfileData,
-      {
-        profile: {
-          form,
-        },
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: {
+        form,
       },
-    );
+    });
     thunk.api.put.mockReturnValue(Promise.resolve({ data: form }));
 
     const result = await thunk.callThunk();
@@ -59,6 +56,8 @@ describe('updateProfileData.test', () => {
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toStrictEqual('rejected');
-    expect(result.payload).toStrictEqual([ValidateProfileError.INCORRECT_USER_DATA]);
+    expect(result.payload).toStrictEqual([
+      ValidateProfileError.INCORRECT_USER_DATA,
+    ]);
   });
 });

@@ -15,23 +15,25 @@ interface CountrySelectProps {
 }
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {
-    className,
-    value,
-    onChange,
-    readonly,
-  } = props;
+  const { className, value, onChange, readonly } = props;
 
   const { t } = useTranslation(AppRoutes.PROFILE);
 
   const countryOptions = useMemo(
-    () => Object.entries(Country).map((val) => ({ value: val[0], content: val[1] })),
+    () =>
+      Object.entries(Country).map((val) => ({
+        value: val[0],
+        content: val[1],
+      })),
     [],
   );
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Country);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Country);
+    },
+    [onChange],
+  );
 
   return (
     <ListBox

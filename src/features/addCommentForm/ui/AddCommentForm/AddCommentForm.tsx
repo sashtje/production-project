@@ -6,13 +6,17 @@ import { classNames } from '@/shared/lib/classNames';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/Stack';
 
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
 import {
-  getAddCommentFormText,
-} from '../../model/selectors/addCommentFormSelectors';
+  addCommentFormActions,
+  addCommentFormReducer,
+} from '../../model/slices/addCommentFormSlice';
+import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss';
 
 interface AddCommentFormProps {
@@ -25,17 +29,17 @@ const reducersList: ReducersList = {
 };
 
 export const AddCommentForm = memo((props: AddCommentFormProps) => {
-  const {
-    className,
-    onSendComment,
-  } = props;
+  const { className, onSendComment } = props;
   const { t } = useTranslation();
   const text = useSelector(getAddCommentFormText);
   const dispatch = useAppDispatch();
 
-  const onCommentTextChange = useCallback((value: string) => {
-    dispatch(addCommentFormActions.setText(value));
-  }, [dispatch]);
+  const onCommentTextChange = useCallback(
+    (value: string) => {
+      dispatch(addCommentFormActions.setText(value));
+    },
+    [dispatch],
+  );
 
   const handleSendComment = useCallback(() => {
     onSendComment(text);
@@ -46,7 +50,11 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducersList}>
-      <HStack data-testid="AddCommentForm" max className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack
+        data-testid="AddCommentForm"
+        max
+        className={classNames(cls.addCommentForm, {}, [className])}
+      >
         <Input
           data-testid="AddCommentForm.Input"
           className={cls.input}
@@ -55,10 +63,7 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
           onChange={onCommentTextChange}
         />
 
-        <Button
-          data-testid="AddCommentForm.Button"
-          onClick={handleSendComment}
-        >
+        <Button data-testid="AddCommentForm.Button" onClick={handleSendComment}>
           {t('Отправить')}
         </Button>
       </HStack>

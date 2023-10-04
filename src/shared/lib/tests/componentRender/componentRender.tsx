@@ -37,9 +37,7 @@ export function TestProvider({ children, options = {} }: TestProviderProps) {
       <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
         <I18nextProvider i18n={i18nForTests}>
           <ThemeProvider initialTheme={theme}>
-            <div className="app">
-              {children}
-            </div>
+            <div className="app">{children}</div>
           </ThemeProvider>
         </I18nextProvider>
       </StoreProvider>
@@ -47,10 +45,9 @@ export function TestProvider({ children, options = {} }: TestProviderProps) {
   );
 }
 
-export function componentRender(component: ReactNode, options?: ComponentRenderOptions) {
-  return render(
-    <TestProvider options={options}>
-      {component}
-    </TestProvider>,
-  );
+export function componentRender(
+  component: ReactNode,
+  options?: ComponentRenderOptions,
+) {
+  return render(<TestProvider options={options}>{component}</TestProvider>);
 }

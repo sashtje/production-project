@@ -8,6 +8,9 @@ export {
 } from './model/selectors/getArticleDetails/getArticleDetails';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export {
-  ArticleSortField, ArticleView, ArticleType, ArticleBlockType,
+  ArticleSortField,
+  ArticleView,
+  ArticleType,
+  ArticleBlockType,
 } from './model/consts/consts';
 export { articleDetailsReducer } from './model/slice/articleDetailsSlice';

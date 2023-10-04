@@ -1,7 +1,9 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 
 import {
-  getArticleDetails, getArticleDetailsIsLoading, getArticleDetailsError,
+  getArticleDetails,
+  getArticleDetailsIsLoading,
+  getArticleDetailsError,
 } from './getArticleDetails';
 
 describe('getArticleDetails.test', () => {
@@ -35,13 +37,17 @@ describe('getArticleDetailsIsLoading.test', () => {
       },
     };
 
-    expect(getArticleDetailsIsLoading(state as StateSchema)).toStrictEqual(true);
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toStrictEqual(
+      true,
+    );
   });
 
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
-    expect(getArticleDetailsIsLoading(state as StateSchema)).toStrictEqual(false);
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toStrictEqual(
+      false,
+    );
   });
 });
 
@@ -60,6 +66,8 @@ describe('getArticleDetailsError.test', () => {
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
-    expect(getArticleDetailsError(state as StateSchema)).toStrictEqual(undefined);
+    expect(getArticleDetailsError(state as StateSchema)).toStrictEqual(
+      undefined,
+    );
   });
 });

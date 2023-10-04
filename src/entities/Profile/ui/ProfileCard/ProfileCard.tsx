@@ -88,10 +88,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     >
       {data?.avatar && (
         <HStack justify="center" max>
-          <Avatar
-            src={data?.avatar}
-            alt={t('Аватар')}
-          />
+          <Avatar src={data?.avatar} alt={t('Аватар')} />
         </HStack>
       )}
 

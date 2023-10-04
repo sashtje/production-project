@@ -20,7 +20,9 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
       return true;
     }
 
-    return roles.some((requiredRole) => Boolean(userRoles?.includes(requiredRole)));
+    return roles.some((requiredRole) =>
+      Boolean(userRoles?.includes(requiredRole)),
+    );
   }, [roles, userRoles]);
 
   if (!auth) {
@@ -28,7 +30,9 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
   }
 
   if (!hasRequiredRoles) {
-    return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+    return (
+      <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
+    );
   }
 
   return children as JSX.Element;

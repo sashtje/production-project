@@ -17,6 +17,7 @@ npm run start:dev or npm run start:dev:vite - to launch client and backend part 
 - `npm run start:dev:server` - Running a backend server
 - `npm run build:prod` - Build in prod mode
 - `npm run build:dev` - Build in dev mode (without minimization)
+- `npm run prettier` - Running prettier on .ts and .tsx files
 - `npm run lint:ts` - Running eslint on .ts and .tsx files
 - `npm run lint:ts:fix` - Running eslint fix on .ts and .tsx files
 - `npm run lint:scss` - Running stylelint on style files

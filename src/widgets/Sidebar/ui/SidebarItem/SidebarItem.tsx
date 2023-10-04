@@ -16,13 +16,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo((props: SidebarItemProps) => {
   const { item, collapsed } = props;
-  const {
-    path,
-    text,
-    Icon,
-    tFileName,
-    authOnly,
-  } = item;
+  const { path, text, Icon, tFileName, authOnly } = item;
 
   const { t } = useTranslation(tFileName);
 
@@ -40,9 +34,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
     >
       <Icon className={cls.icon} />
 
-      <span className={cls.link}>
-        {t(text)}
-      </span>
+      <span className={cls.link}>{t(text)}</span>
     </AppLink>
   );
 });

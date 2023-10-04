@@ -12,24 +12,18 @@ export default {
   },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+  <ArticleList {...args} />
+);
 
 export const NormalSmall = Template.bind({});
 NormalSmall.args = {
-  articles: [
-    { ...article },
-    { ...article, id: '2' },
-    { ...article, id: '3' },
-  ],
+  articles: [{ ...article }, { ...article, id: '2' }, { ...article, id: '3' }],
 };
 
 export const NormalBig = Template.bind({});
 NormalBig.args = {
-  articles: [
-    { ...article },
-    { ...article, id: '2' },
-    { ...article, id: '3' },
-  ],
+  articles: [{ ...article }, { ...article, id: '2' }, { ...article, id: '3' }],
   view: ArticleView.BIG,
 };
 

@@ -7,9 +7,7 @@
     "views": 1022,
     "createdAt": "01.09.2023",
     "userId": "1",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -74,9 +72,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp"
     }
   },
@@ -88,9 +84,7 @@
     "views": 3005,
     "createdAt": "04.09.2023",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -107,9 +101,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -121,10 +113,7 @@
     "views": 5300,
     "createdAt": "05.09.2023",
     "userId": "2",
-    "type": [
-      "IT",
-      "SCIENCE"
-    ],
+    "type": ["IT", "SCIENCE"],
     "blocks": [
       {
         "id": "1",
@@ -141,9 +130,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -155,9 +142,7 @@
     "views": 5307,
     "createdAt": "05.08.2023",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -174,9 +159,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -188,9 +171,7 @@
     "views": 4200,
     "createdAt": "01.04.2023",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -207,9 +188,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -221,9 +200,7 @@
     "views": 600,
     "createdAt": "10.09.2023",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -240,9 +217,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -254,9 +229,7 @@
     "views": 300,
     "createdAt": "04.02.2022",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -273,9 +246,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -287,9 +258,7 @@
     "views": 736,
     "createdAt": "25.04.2023",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -306,9 +275,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   },
@@ -320,9 +287,7 @@
     "views": 347,
     "createdAt": "05.11.2022",
     "userId": "2",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -339,9 +304,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     }
   }

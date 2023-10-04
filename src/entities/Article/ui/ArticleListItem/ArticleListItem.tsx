@@ -14,9 +14,7 @@ import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
-import {
-  Article, ArticleTextBlock,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../../ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 
@@ -28,33 +26,22 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    className,
-    article,
-    view,
-    target,
-  } = props;
+  const { className, article, view, target } = props;
 
   const { t } = useTranslation('articles');
 
-  const types = (
-    <Text
-      className={cls.types}
-      text={article.type.join(', ')}
-    />
-  );
+  const types = <Text className={cls.types} text={article.type.join(', ')} />;
   const views = (
     <>
-      <Text
-        className={cls.views}
-        text={String(article.views)}
-      />
+      <Text className={cls.views} text={String(article.views)} />
       <Icon Svg={EyeIcon} />
     </>
   );
 
   if (view === ArticleView.BIG) {
-    const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+    const textBlock = article.blocks.find(
+      (block) => block.type === ArticleBlockType.TEXT,
+    ) as ArticleTextBlock;
 
     return (
       <div
@@ -68,14 +55,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
               src={article.user.avatar}
               alt={article.user.username}
             />
-            <Text
-              text={article.user.username}
-              className={cls.username}
-            />
-            <Text
-              text={article.createdAt}
-              className={cls.date}
-            />
+            <Text text={article.user.username} className={cls.username} />
+            <Text text={article.createdAt} className={cls.date} />
           </div>
 
           <Text title={article.title} className={cls.title} />
@@ -87,17 +68,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             className={cls.img}
           />
           {!!textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
 
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={getRouteArticlesDetails(article.id)}
-            >
-              <Button>
-                {t('Читать далее')}
-              </Button>
+            <AppLink target={target} to={getRouteArticlesDetails(article.id)}>
+              <Button>{t('Читать далее')}</Button>
             </AppLink>
 
             {views}
@@ -123,10 +102,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
           />
 
-          <Text
-            className={cls.date}
-            text={article.createdAt}
-          />
+          <Text className={cls.date} text={article.createdAt} />
         </div>
 
         <div className={cls.infoWrapper}>
@@ -134,10 +110,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {views}
         </div>
 
-        <Text
-          className={cls.title}
-          text={article.title}
-        />
+        <Text className={cls.title} text={article.title} />
       </Card>
     </AppLink>
   );

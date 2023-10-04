@@ -1,11 +1,12 @@
-import {
-  memo, useCallback, useEffect,
-} from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -49,32 +50,32 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
-    case ArticleBlockType.TEXT:
-      return (
-        <ArticleTextBlockComponent
-          key={block.id}
-          block={block}
-          className={cls.block}
-        />
-      );
-    case ArticleBlockType.CODE:
-      return (
-        <ArticleCodeBlockComponent
-          key={block.id}
-          block={block}
-          className={cls.block}
-        />
-      );
-    case ArticleBlockType.IMAGE:
-      return (
-        <ArticleImageBlockComponent
-          key={block.id}
-          block={block}
-          className={cls.block}
-        />
-      );
-    default:
-      return null;
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlockComponent
+            key={block.id}
+            block={block}
+            className={cls.block}
+          />
+        );
+      case ArticleBlockType.CODE:
+        return (
+          <ArticleCodeBlockComponent
+            key={block.id}
+            block={block}
+            className={cls.block}
+          />
+        );
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlockComponent
+            key={block.id}
+            block={block}
+            className={cls.block}
+          />
+        );
+      default:
+        return null;
     }
   }, []);
 
@@ -89,7 +90,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={cls.avatar} width={200} height={200} borderRadius="50%" />
+        <Skeleton
+          className={cls.avatar}
+          width={200}
+          height={200}
+          borderRadius="50%"
+        />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -107,11 +113,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     content = (
       <>
         <HStack max className={cls.avatarWrapper}>
-          <Avatar
-            size={200}
-            src={article?.img}
-            className={cls.avatar}
-          />
+          <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
 
         <VStack gap="4" max data-testid="ArticleDetails.title">
@@ -123,18 +125,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           />
 
           <HStack gap="8" className={cls.articleInfo}>
-            <Icon
-              className={cls.icon}
-              Svg={EyeIcon}
-            />
+            <Icon className={cls.icon} Svg={EyeIcon} />
             <Text text={String(article?.views)} />
           </HStack>
 
           <HStack gap="8" className={cls.articleInfo}>
-            <Icon
-              className={cls.icon}
-              Svg={CalendarIcon}
-            />
+            <Icon className={cls.icon} Svg={CalendarIcon} />
             <Text text={article?.createdAt} />
           </HStack>
         </VStack>
@@ -146,7 +142,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" max className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack
+        gap="16"
+        max
+        className={classNames(cls.articleDetails, {}, [className])}
+      >
         {content}
       </VStack>
     </DynamicModuleLoader>

@@ -16,7 +16,7 @@ import { getRouteArticleCreate } from '@/shared/const/router';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-    className?: string;
+  className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -41,10 +41,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           theme={TextTheme.INVERTED}
         />
 
-        <AppLink
-          to={getRouteArticleCreate()}
-          theme={AppLinkTheme.SECONDARY}
-        >
+        <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
           {t('Создать статью')}
         </AppLink>
 
@@ -68,10 +65,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       </Button>
 
       {isAuthModal && (
-        <LoginModal
-          isOpen={isAuthModal}
-          onClose={onCloseModal}
-        />
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}
     </header>
   );

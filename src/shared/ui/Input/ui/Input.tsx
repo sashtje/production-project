@@ -1,14 +1,22 @@
 import React, {
-  InputHTMLAttributes, memo, SyntheticEvent, useEffect, useRef, useState,
+  InputHTMLAttributes,
+  memo,
+  SyntheticEvent,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 
 import { classNames, Mods } from '@/shared/lib/classNames';
 
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>;
 
-interface InputProps extends HTMLInputProps{
+interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string | number;
   onChange?: (value: string) => void;
@@ -66,9 +74,7 @@ export const Input = memo((props: InputProps) => {
   return (
     <div className={classNames(cls.inputWrapper, mods, [className])}>
       {!!placeholder && (
-        <div className={cls.placeholder}>
-          {`${placeholder}>`}
-        </div>
+        <div className={cls.placeholder}>{`${placeholder}>`}</div>
       )}
 
       <div className={cls.caretWrapper}>
@@ -85,13 +91,12 @@ export const Input = memo((props: InputProps) => {
           {...otherProps}
         />
 
-        {isCaretVisible
-            && (
-              <span
-                className={cls.caret}
-                style={{ left: `${caretPosition * 9}px` }}
-              />
-            )}
+        {isCaretVisible && (
+          <span
+            className={cls.caret}
+            style={{ left: `${caretPosition * 9}px` }}
+          />
+        )}
       </div>
     </div>
   );

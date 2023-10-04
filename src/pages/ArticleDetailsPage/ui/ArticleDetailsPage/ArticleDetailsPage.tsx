@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
@@ -27,7 +30,7 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   const { className } = props;
 
   const { t } = useTranslation('articles');
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
 
   if (!id) {
     return (

@@ -7,16 +7,14 @@ import { Card, CardTheme } from '../../Card';
 import cls from './Tabs.module.scss';
 
 export const Tabs = memo((props: TabsProps) => {
-  const {
-    className,
-    tabs,
-    value,
-    onTabClick,
-  } = props;
+  const { className, tabs, value, onTabClick } = props;
 
-  const tabClickHandle = useCallback((tab: TabItem) => () => {
-    onTabClick(tab);
-  }, [onTabClick]);
+  const tabClickHandle = useCallback(
+    (tab: TabItem) => () => {
+      onTabClick(tab);
+    },
+    [onTabClick],
+  );
 
   return (
     <div className={classNames(cls.tabs, {}, [className])}>

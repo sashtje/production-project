@@ -9,13 +9,13 @@ import { EditableProfileCard } from '@/features/editableProfileCard';
 import { AppRoutes } from '@/shared/const/router';
 
 interface ProfilePageProps {
-    className?: string;
+  className?: string;
 }
 
 export const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props;
   const { t } = useTranslation(AppRoutes.PROFILE);
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
 
   if (!id) {
     return <Text text={t('Профиль не найден')} />;

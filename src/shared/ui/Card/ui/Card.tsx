@@ -27,7 +27,10 @@ export const Card = memo((props: CardProps) => {
 
   return (
     <div
-      className={classNames(cls.card, { [cls.fullwidth]: fullwidth }, [className, cls[theme]])}
+      className={classNames(cls.card, { [cls.fullwidth]: fullwidth }, [
+        className,
+        cls[theme],
+      ])}
       {...otherProps}
     >
       {children}

@@ -41,10 +41,17 @@ describe('validateProfileData.test', () => {
 
   test('incorrect all', () => {
     const result = validateProfileData({
-      ...data, first: undefined, age: undefined, country: undefined,
+      ...data,
+      first: undefined,
+      age: undefined,
+      country: undefined,
     });
 
-    expect(result).toStrictEqual([ValidateProfileError.INCORRECT_USER_DATA, ValidateProfileError.INCORRECT_AGE, ValidateProfileError.INCORRECT_COUNTRY]);
+    expect(result).toStrictEqual([
+      ValidateProfileError.INCORRECT_USER_DATA,
+      ValidateProfileError.INCORRECT_AGE,
+      ValidateProfileError.INCORRECT_COUNTRY,
+    ]);
   });
 
   test('no data', () => {

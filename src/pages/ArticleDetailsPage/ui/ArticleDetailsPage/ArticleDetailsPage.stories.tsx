@@ -1,6 +1,10 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Article, ArticleBlockType, ArticleType } from '@/entities/Article/testing';
+import {
+  Article,
+  ArticleBlockType,
+  ArticleType,
+} from '@/entities/Article/testing';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { ArticleDetailsPage } from './ArticleDetailsPage';
@@ -87,12 +91,16 @@ export default {
   },
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+  <ArticleDetailsPage {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-})];
+Normal.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+  }),
+];

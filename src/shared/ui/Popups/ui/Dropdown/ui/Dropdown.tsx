@@ -9,10 +9,10 @@ import cls from './Dropdown.module.scss';
 import commonCls from '../../../styles/popup.module.scss';
 
 interface DropdownItem {
-    disabled?: boolean;
-    content?: ReactNode;
-    onClick?: () => void;
-    href?: string;
+  disabled?: boolean;
+  content?: ReactNode;
+  onClick?: () => void;
+  href?: string;
 }
 
 interface DropdownProps {
@@ -23,26 +23,23 @@ interface DropdownProps {
 }
 
 export const Dropdown = memo((props: DropdownProps) => {
-  const {
-    className,
-    items,
-    trigger,
-    direction = 'bottom-left',
-  } = props;
+  const { className, items, trigger, direction = 'bottom-left' } = props;
 
   return (
     <Menu as="div" className={classNames(commonCls.popup, {}, [className])}>
-      <Menu.Button className={commonCls.trigger}>
-        {trigger}
-      </Menu.Button>
+      <Menu.Button className={commonCls.trigger}>{trigger}</Menu.Button>
 
       <Menu.Items className={classNames(cls.menu, {}, [commonCls[direction]])}>
         {items.map((item) => {
-          const content = ({ active }: {active: boolean}) => (
+          const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
               disabled={item.disabled}
-              className={classNames(cls.item, { [commonCls.active]: active }, [])}
+              className={classNames(
+                cls.item,
+                { [commonCls.active]: active },
+                [],
+              )}
               onClick={item.onClick}
             >
               {item.content}
@@ -51,14 +48,23 @@ export const Dropdown = memo((props: DropdownProps) => {
 
           if (item.href) {
             return (
-              <Menu.Item key={String(item.content)} as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                key={String(item.content)}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item key={String(item.content)} as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              key={String(item.content)}
+              as={Fragment}
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           );

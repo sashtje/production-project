@@ -52,12 +52,12 @@ export const ListBox = (props: ListBoxProps) => {
         onChange={onChange}
       >
         <HListBox.Button as="div" className={commonCls.trigger}>
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
-          </Button>
+          <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
 
-        <HListBox.Options className={classNames(cls.options, {}, [commonCls[direction]])}>
+        <HListBox.Options
+          className={classNames(cls.options, {}, [commonCls[direction]])}
+        >
           {items?.map((item) => (
             <HListBox.Option
               key={item.value}
@@ -66,13 +66,15 @@ export const ListBox = (props: ListBoxProps) => {
               as={Fragment}
             >
               {({ active, selected }) => (
-                <li className={
-                  classNames(
+                <li
+                  className={classNames(
                     cls.item,
-                    { [commonCls.active]: active, [commonCls.disabled]: item.disabled },
+                    {
+                      [commonCls.active]: active,
+                      [commonCls.disabled]: item.disabled,
+                    },
                     [],
-                  )
-                }
+                  )}
                 >
                   {selected && '!!!'}
                   {item.content}
