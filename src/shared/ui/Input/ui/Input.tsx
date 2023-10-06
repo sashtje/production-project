@@ -73,9 +73,7 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <div className={classNames(cls.inputWrapper, mods, [className])}>
-      {!!placeholder && (
-        <div className={cls.placeholder}>{`${placeholder}>`}</div>
-      )}
+      {!!placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
 
       <div className={cls.caretWrapper}>
         <input
@@ -92,10 +90,7 @@ export const Input = memo((props: InputProps) => {
         />
 
         {isCaretVisible && (
-          <span
-            className={cls.caret}
-            style={{ left: `${caretPosition * 9}px` }}
-          />
+          <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />
         )}
       </div>
     </div>

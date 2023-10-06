@@ -35,11 +35,7 @@ export const Dropdown = memo((props: DropdownProps) => {
             <button
               type="button"
               disabled={item.disabled}
-              className={classNames(
-                cls.item,
-                { [commonCls.active]: active },
-                [],
-              )}
+              className={classNames(cls.item, { [commonCls.active]: active }, [])}
               onClick={item.onClick}
             >
               {item.content}
@@ -60,11 +56,7 @@ export const Dropdown = memo((props: DropdownProps) => {
           }
 
           return (
-            <Menu.Item
-              key={String(item.content)}
-              as={Fragment}
-              disabled={item.disabled}
-            >
+            <Menu.Item key={String(item.content)} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

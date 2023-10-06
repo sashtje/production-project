@@ -11,18 +11,14 @@ interface ArticleCodeBlockComponentProps {
   block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo(
-  (props: ArticleCodeBlockComponentProps) => {
-    const { className, block } = props;
+export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
+  const { className, block } = props;
 
-    return (
-      <div
-        className={classNames(cls.articleCodeBlockComponent, {}, [className])}
-      >
-        <Code text={block.code} />
-      </div>
-    );
-  },
-);
+  return (
+    <div className={classNames(cls.articleCodeBlockComponent, {}, [className])}>
+      <Code text={block.code} />
+    </div>
+  );
+});
 
 ArticleCodeBlockComponent.displayName = 'ArticleCodeBlockComponent';

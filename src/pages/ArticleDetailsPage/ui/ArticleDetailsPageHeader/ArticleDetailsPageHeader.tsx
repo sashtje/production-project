@@ -15,34 +15,30 @@ interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo(
-  (props: ArticleDetailsPageHeaderProps) => {
-    const { className } = props;
-    const { t } = useTranslation('articles');
+export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
+  const { className } = props;
+  const { t } = useTranslation('articles');
 
-    const navigate = useNavigate();
-    const onBackToList = useCallback(() => {
-      navigate(getRouteArticles());
-    }, [navigate]);
+  const navigate = useNavigate();
+  const onBackToList = useCallback(() => {
+    navigate(getRouteArticles());
+  }, [navigate]);
 
-    const canEditArticle = useSelector(getCanEditArticle);
-    const article = useSelector(getArticleDetails);
-    const onEditArticle = useCallback(() => {
-      if (article?.id) {
-        navigate(getRouteArticleEdit(article.id));
-      }
-    }, [navigate, article]);
+  const canEditArticle = useSelector(getCanEditArticle);
+  const article = useSelector(getArticleDetails);
+  const onEditArticle = useCallback(() => {
+    if (article?.id) {
+      navigate(getRouteArticleEdit(article.id));
+    }
+  }, [navigate, article]);
 
-    return (
-      <HStack max justify="between" className={classNames('', {}, [className])}>
-        <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+  return (
+    <HStack max justify="between" className={classNames('', {}, [className])}>
+      <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
 
-        {canEditArticle && (
-          <Button onClick={onEditArticle}>{t('Редактировать')}</Button>
-        )}
-      </HStack>
-    );
-  },
-);
+      {canEditArticle && <Button onClick={onEditArticle}>{t('Редактировать')}</Button>}
+    </HStack>
+  );
+});
 
 ArticleDetailsPageHeader.displayName = 'ArticleDetailsPageHeader';

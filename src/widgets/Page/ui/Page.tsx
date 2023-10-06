@@ -27,9 +27,7 @@ export const Page = memo((props: PageProps) => {
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
 
-  const scrollPosition = useSelector((state: StateSchema) =>
-    getUIScrollByPath(state, pathname),
-  );
+  const scrollPosition = useSelector((state: StateSchema) => getUIScrollByPath(state, pathname));
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
     dispatch(

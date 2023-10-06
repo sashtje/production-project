@@ -25,9 +25,7 @@ export const Popover = (props: PopoverProps) => {
         {trigger}
       </HPopover.Button>
 
-      <HPopover.Panel
-        className={classNames(cls.panel, {}, [commonCls[direction]])}
-      >
+      <HPopover.Panel className={classNames(cls.panel, {}, [commonCls[direction]])}>
         {children}
       </HPopover.Panel>
     </HPopover>

@@ -55,9 +55,7 @@ export const ListBox = (props: ListBoxProps) => {
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
 
-        <HListBox.Options
-          className={classNames(cls.options, {}, [commonCls[direction]])}
-        >
+        <HListBox.Options className={classNames(cls.options, {}, [commonCls[direction]])}>
           {items?.map((item) => (
             <HListBox.Option
               key={item.value}

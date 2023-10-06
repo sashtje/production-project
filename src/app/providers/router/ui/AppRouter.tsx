@@ -12,13 +12,7 @@ export const AppRouter = memo(() => {
       <Route
         key={path}
         path={path}
-        element={
-          authOnly ? (
-            <RequireAuth roles={roles}>{element}</RequireAuth>
-          ) : (
-            element
-          )
-        }
+        element={authOnly ? <RequireAuth roles={roles}>{element}</RequireAuth> : element}
       />
     ),
     [],

@@ -138,6 +138,25 @@ For asynchronous connection of reducers (so as not to pull them into a common bu
 
 ----
 
+## Working with data
+
+Use of features is allowed only with the helper "toggleFeatures". It accepts an object with options:
+
+```javascript
+{
+  name: string; // feature flag name
+    on: () => T; // a function that will work after enabling the feature
+    off: () => T; // a function that will work after disabling the feature
+}
+```
+
+To automatically remove a feature, use  `scripts/remove-feature.ts` in the following format:
+`ts-node scripts/remove-feature.ts feature-name feature-state`
+
+Feature state can take only one of two values: **on** or **off**.
+
+----
+
 ## Entities
 
 - [Article](/src/entities/Article)

@@ -29,12 +29,7 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     <div className={classNames(cls.wrapper, mods, [className])}>
       {label && <span className={cls.label}>{`${label}>`}</span>}
 
-      <select
-        className={cls.select}
-        value={value}
-        onChange={onChangeHandler}
-        disabled={readonly}
-      >
+      <select className={cls.select} value={value} onChange={onChangeHandler} disabled={readonly}>
         {optionsList}
       </select>
     </div>

@@ -53,9 +53,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     () => ({
       [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
       [ValidateProfileError.NO_DATA]: t('Нет данных'),
-      [ValidateProfileError.INCORRECT_USER_DATA]: t(
-        'Имя и фамилия обязательны',
-      ),
+      [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
       [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
       [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректная страна'),
     }),

@@ -50,11 +50,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       >
         <Card className={cls.card}>
           <div className={cls.header}>
-            <Avatar
-              size={30}
-              src={article.user.avatar}
-              alt={article.user.username}
-            />
+            <Avatar size={30} src={article.user.avatar} alt={article.user.username} />
             <Text text={article.user.username} className={cls.username} />
             <Text text={article.createdAt} className={cls.date} />
           </div>
@@ -67,12 +63,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
             className={cls.img}
           />
-          {!!textBlock && (
-            <ArticleTextBlockComponent
-              block={textBlock}
-              className={cls.textBlock}
-            />
-          )}
+          {!!textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
 
           <div className={cls.footer}>
             <AppLink target={target} to={getRouteArticlesDetails(article.id)}>

@@ -1,10 +1,7 @@
 import { ReactNode, useCallback, useEffect } from 'react';
 
 import { classNames } from '@/shared/lib/classNames';
-import {
-  AnimationProvider,
-  useAnimationLibs,
-} from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 
 import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay';
@@ -45,13 +42,7 @@ const DrawerContent = (props: DrawerProps) => {
   };
 
   const bind = Gesture.useDrag(
-    ({
-      last,
-      velocity: [, vy],
-      direction: [, dy],
-      movement: [, my],
-      cancel,
-    }) => {
+    ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
       if (my < -70) {
         cancel();
       }
@@ -82,11 +73,7 @@ const DrawerContent = (props: DrawerProps) => {
 
   return (
     <Portal>
-      <div
-        className={classNames(cls.drawer, { [cls.opened]: isOpen }, [
-          className,
-        ])}
-      >
+      <div className={classNames(cls.drawer, { [cls.opened]: isOpen }, [className])}>
         <Overlay onClick={close} />
 
         <Spring.a.div

@@ -21,37 +21,35 @@ interface ArticleDetailsCommentsProps {
   id: string;
 }
 
-export const ArticleDetailsComments = memo(
-  (props: ArticleDetailsCommentsProps) => {
-    const { className, id } = props;
-    const { t } = useTranslation('articles');
-    const dispatch = useAppDispatch();
-    const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
+  const { className, id } = props;
+  const { t } = useTranslation('articles');
+  const dispatch = useAppDispatch();
+  const comments = useSelector(getArticleComments.selectAll);
+  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-    const onSendComment = useCallback(
-      (textComment: string) => {
-        dispatch(addCommentForArticle(textComment));
-      },
-      [dispatch],
-    );
+  const onSendComment = useCallback(
+    (textComment: string) => {
+      dispatch(addCommentForArticle(textComment));
+    },
+    [dispatch],
+  );
 
-    useInitialEffect(() => {
-      dispatch(fetchCommentsByArticleId(id));
-    }, [id]);
+  useInitialEffect(() => {
+    dispatch(fetchCommentsByArticleId(id));
+  }, [id]);
 
-    return (
-      <VStack gap="16" max className={classNames('', {}, [className])}>
-        <Text size={TextSize.L} title={t('Комментарии')} />
+  return (
+    <VStack gap="16" max className={classNames('', {}, [className])}>
+      <Text size={TextSize.L} title={t('Комментарии')} />
 
-        <Suspense fallback={<Loader />}>
-          <AddCommentForm onSendComment={onSendComment} />
-        </Suspense>
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
 
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </VStack>
-    );
-  },
-);
+      <CommentList isLoading={commentsIsLoading} comments={comments} />
+    </VStack>
+  );
+});
 
 ArticleDetailsComments.displayName = 'ArticleDetailsComments';

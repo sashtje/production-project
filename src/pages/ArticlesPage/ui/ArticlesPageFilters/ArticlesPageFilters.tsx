@@ -103,18 +103,10 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
       </div>
 
       <Card className={cls.search}>
-        <Input
-          placeholder={t('Поиск')}
-          value={search}
-          onChange={onChangeSearch}
-        />
+        <Input placeholder={t('Поиск')} value={search} onChange={onChangeSearch} />
       </Card>
 
-      <ArticleTypeTabs
-        className={cls.tabs}
-        value={type}
-        onChangeType={onChangeType}
-      />
+      <ArticleTypeTabs className={cls.tabs} value={type} onChangeType={onChangeType} />
     </div>
   );
 });

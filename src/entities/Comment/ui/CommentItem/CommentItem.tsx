@@ -25,11 +25,7 @@ export const CommentItem = memo((props: CommentItemProps) => {
 
   if (isLoading) {
     return (
-      <VStack
-        gap="8"
-        max
-        className={classNames(cls.commentItem, {}, [className, cls.loading])}
-      >
+      <VStack gap="8" max className={classNames(cls.commentItem, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} borderRadius="50%" />
           <Skeleton width={100} height={16} className={cls.username} />

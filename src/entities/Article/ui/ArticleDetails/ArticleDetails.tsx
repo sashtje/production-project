@@ -51,29 +51,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.TEXT:
-        return (
-          <ArticleTextBlockComponent
-            key={block.id}
-            block={block}
-            className={cls.block}
-          />
-        );
+        return <ArticleTextBlockComponent key={block.id} block={block} className={cls.block} />;
       case ArticleBlockType.CODE:
-        return (
-          <ArticleCodeBlockComponent
-            key={block.id}
-            block={block}
-            className={cls.block}
-          />
-        );
+        return <ArticleCodeBlockComponent key={block.id} block={block} className={cls.block} />;
       case ArticleBlockType.IMAGE:
-        return (
-          <ArticleImageBlockComponent
-            key={block.id}
-            block={block}
-            className={cls.block}
-          />
-        );
+        return <ArticleImageBlockComponent key={block.id} block={block} className={cls.block} />;
       default:
         return null;
     }
@@ -90,12 +72,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton
-          className={cls.avatar}
-          width={200}
-          height={200}
-          borderRadius="50%"
-        />
+        <Skeleton className={cls.avatar} width={200} height={200} borderRadius="50%" />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -103,12 +80,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = (
-      <Text
-        title={t('Произошла ошибка при загрузке статьи')}
-        align={TextAlign.CENTER}
-      />
-    );
+    content = <Text title={t('Произошла ошибка при загрузке статьи')} align={TextAlign.CENTER} />;
   } else {
     content = (
       <>
@@ -142,11 +114,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack
-        gap="16"
-        max
-        className={classNames(cls.articleDetails, {}, [className])}
-      >
+      <VStack gap="16" max className={classNames(cls.articleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>

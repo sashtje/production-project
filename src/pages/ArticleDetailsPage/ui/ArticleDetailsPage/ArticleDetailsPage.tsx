@@ -12,8 +12,8 @@ import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/features';
-import { Counter } from '@/entities/Counter';
+import { toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -34,9 +34,6 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
   const { t } = useTranslation('articles');
   const { id } = useParams<{ id: string }>();
 
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled');
-
   if (!id) {
     return (
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
@@ -44,6 +41,12 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
       </Page>
     );
   }
+
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+  });
 
   return (
     <DynamicModuleLoader reducers={reducersList} removeAfterUnmount>
@@ -53,9 +56,7 @@ export const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
           <ArticleDetails id={id} />
 
-          {isCounterEnabled && <Counter />}
-
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          {articleRatingCard}
 
           <ArticleRecommendationsList />
 

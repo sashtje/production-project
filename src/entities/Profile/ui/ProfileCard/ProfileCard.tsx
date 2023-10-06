@@ -81,11 +81,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
 
   return (
-    <VStack
-      className={classNames(cls.profileCard, mods, [className])}
-      gap="8"
-      max
-    >
+    <VStack className={classNames(cls.profileCard, mods, [className])} gap="8" max>
       {data?.avatar && (
         <HStack justify="center" max>
           <Avatar src={data?.avatar} alt={t('Аватар')} />
@@ -130,16 +126,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChange={onChangeAvatar}
         readonly={readonly}
       />
-      <CurrencySelect
-        value={data?.currency}
-        onChange={onChangeCurrency}
-        readonly={readonly}
-      />
-      <CountrySelect
-        value={data?.country}
-        onChange={onChangeCountry}
-        readonly={readonly}
-      />
+      <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
+      <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
     </VStack>
   );
 };
