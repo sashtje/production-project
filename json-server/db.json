@@ -694,6 +694,10 @@
       "username": "admin",
       "password": "123",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp"
     },
     {
@@ -701,6 +705,10 @@
       "username": "user",
       "password": "123",
       "roles": ["USER"],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     },
     {
@@ -708,6 +716,10 @@
       "username": "manager",
       "password": "123",
       "roles": ["MANAGER"],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      },
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     },
     {
@@ -715,6 +727,10 @@
       "username": "testuser",
       "password": "123",
       "roles": [],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqNiwgTLa4GOFNV2CXioYgjaEEt4K6sd-_BkWgvANyjxNQ_aEcjstLSmmBUWN2W1ODFLU&usqp=CAU"
     }
   ],
