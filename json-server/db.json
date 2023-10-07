@@ -59,7 +59,9 @@
       "views": 1022,
       "createdAt": "01.09.2023",
       "userId": "1",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -129,7 +131,9 @@
       "views": 3005,
       "createdAt": "04.09.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -151,7 +155,10 @@
       "views": 5300,
       "createdAt": "05.09.2023",
       "userId": "2",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -173,7 +180,9 @@
       "views": 5307,
       "createdAt": "05.08.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -195,7 +204,9 @@
       "views": 4200,
       "createdAt": "01.04.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -217,7 +228,9 @@
       "views": 600,
       "createdAt": "10.09.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -239,7 +252,9 @@
       "views": 300,
       "createdAt": "04.02.2022",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -261,7 +276,9 @@
       "views": 736,
       "createdAt": "25.04.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -283,7 +300,9 @@
       "views": 347,
       "createdAt": "05.11.2022",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -305,7 +324,10 @@
       "views": 978,
       "createdAt": "17.07.2023",
       "userId": "2",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -327,7 +349,9 @@
       "views": 1408,
       "createdAt": "23.05.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -349,7 +373,9 @@
       "views": 248,
       "createdAt": "12.12.2022",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -371,7 +397,9 @@
       "views": 2078,
       "createdAt": "27.03.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -393,7 +421,9 @@
       "views": 3607,
       "createdAt": "15.02.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -415,7 +445,9 @@
       "views": 2900,
       "createdAt": "03.10.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -437,7 +469,9 @@
       "views": 5000,
       "createdAt": "19.09.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -459,7 +493,9 @@
       "views": 3029,
       "createdAt": "14.05.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -481,7 +517,9 @@
       "views": 4038,
       "createdAt": "04.08.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -503,7 +541,9 @@
       "views": 643,
       "createdAt": "08.08.2022",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -525,7 +565,9 @@
       "views": 7389,
       "createdAt": "02.12.2022",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -547,7 +589,9 @@
       "views": 7643,
       "createdAt": "05.05.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -569,7 +613,10 @@
       "views": 3240,
       "createdAt": "16.02.2023",
       "userId": "2",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -591,7 +638,9 @@
       "views": 245,
       "createdAt": "07.07.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -613,7 +662,9 @@
       "views": 843,
       "createdAt": "12.04.2023",
       "userId": "2",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -635,7 +686,9 @@
       "views": 845,
       "createdAt": "12.06.2023",
       "userId": "2",
-      "type": ["ECONOMICS"],
+      "type": [
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -693,10 +746,17 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_orange_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp"
     },
@@ -704,10 +764,17 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     },
@@ -715,10 +782,17 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://static.toiimg.com/thumb/msid-98919960,width-400,resizemode-4/98919960.jpg"
     },
@@ -730,6 +804,11 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqNiwgTLa4GOFNV2CXioYgjaEEt4K6sd-_BkWgvANyjxNQ_aEcjstLSmmBUWN2W1ODFLU&usqp=CAU"
     }
