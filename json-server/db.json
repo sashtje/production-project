@@ -756,7 +756,8 @@
       "jsonSettings": {
         "theme": "app_orange_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://s10.stc.yc.kpcdn.net/share/i/12/12010775/wr-960.webp"
     },

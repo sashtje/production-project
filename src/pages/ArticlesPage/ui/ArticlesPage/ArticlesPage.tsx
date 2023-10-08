@@ -9,6 +9,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
@@ -48,6 +49,8 @@ export const ArticlesPage = memo((props: ArticlesPageProps) => {
         <ArticlesPageFilters />
 
         <ArticleInfiniteList />
+
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );

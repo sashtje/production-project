@@ -174,6 +174,7 @@ Feature state can take only one of two values: **on** or **off**.
 ## Features
 
 - [addCommentForm](/src/features/addCommentForm)
+- [articlePageGreeting](/src/features/articlePageGreeting)
 - [articleRating](/src/features/articleRating)
 - [articleRecommendationsList](/src/features/articleRecommendationsList)
 - [articleSortSelector](/src/features/articleSortSelector)
