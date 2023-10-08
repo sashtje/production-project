@@ -11,6 +11,7 @@ import {
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -40,6 +41,7 @@ export const LoginForm = memo((props: LoginFormProps) => {
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
+  const { setTheme } = useTheme();
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -59,9 +61,12 @@ export const LoginForm = memo((props: LoginFormProps) => {
     const result = await dispatch(loginByUsername({ username, password }));
 
     if (result.meta.requestStatus === 'fulfilled') {
+      if (typeof result?.payload === 'object' && result?.payload?.jsonSettings?.theme) {
+        setTheme?.(result.payload.jsonSettings.theme);
+      }
       onSuccess();
     }
-  }, [onSuccess, dispatch, password, username]);
+  }, [onSuccess, dispatch, password, username, setTheme]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
