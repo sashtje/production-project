@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {
-  title: 'shared/ThemeSwitcher',
+  title: 'features/ThemeSwitcher',
   component: ThemeSwitcher,
   argTypes: {
     backgroundColor: { control: 'color' },
