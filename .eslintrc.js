@@ -63,6 +63,7 @@ module.exports = {
           'borderRadius',
           'height',
           'width',
+          'feature',
         ],
       },
     ],
