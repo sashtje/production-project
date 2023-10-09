@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 
 import { Theme } from '@/shared/const/theme';
 
+import { toggleFeatures } from '../../features';
 import { ThemeContext } from '../../context/ThemeContext';
 
 interface UseThemeResult {
@@ -14,7 +15,11 @@ export function useTheme(): UseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
 
   useEffect(() => {
-    document.body.className = theme || Theme.LIGHT;
+    document.body.className = `${toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => 'redesigned',
+      off: () => '',
+    })} ${theme || Theme.LIGHT}`;
   }, [theme]);
 
   const toggleTheme = (saveAction: (theme: Theme) => void) => {

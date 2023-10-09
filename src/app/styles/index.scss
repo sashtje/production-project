@@ -9,6 +9,11 @@ body {
   color: var(--primary-color);
 }
 
+body.redesigned {
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
+}
+
 * {
   scrollbar-color: var(--card-bg) var(--inverted-primary-color);
   scrollbar-width: 10px;
@@ -16,6 +21,11 @@ body {
 
 .app {
   background: var(--bg-color);
+  min-height: 100vh;
+}
+
+.app_redesigned {
+  background: var(--bg-redesigned);
   min-height: 100vh;
 }
 

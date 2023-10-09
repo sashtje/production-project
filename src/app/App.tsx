@@ -6,6 +6,7 @@ import { classNames } from '@/shared/lib/classNames';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { AppRouter } from './providers/router';
 
@@ -22,15 +23,32 @@ export function App() {
   }
 
   return (
-    <div className={classNames('app', {}, [])}>
-      <Suspense fallback="">
-        <Navbar />
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <div className={classNames('app_redesigned', {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
 
-        <div className="content-page">
-          <Sidebar />
-          {inited && <AppRouter />}
+            <div className="content-page">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      off={
+        <div className={classNames('app', {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
+
+            <div className="content-page">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
+          </Suspense>
+        </div>
+      }
+    />
   );
 }
