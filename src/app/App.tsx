@@ -7,6 +7,7 @@ import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts';
 
 import { AppRouter } from './providers/router';
 
@@ -28,12 +29,12 @@ export function App() {
       on={
         <div className={classNames('app_redesigned', {}, [])}>
           <Suspense fallback="">
-            <Navbar />
-
-            <div className="content-page">
-              <Sidebar />
-              {inited && <AppRouter />}
-            </div>
+            <MainLayout
+              header={<Navbar />}
+              sidebar={<Sidebar />}
+              content={<AppRouter />}
+              toolbar={<div>123</div>}
+            />
           </Suspense>
         </div>
       }
@@ -44,7 +45,7 @@ export function App() {
 
             <div className="content-page">
               <Sidebar />
-              {inited && <AppRouter />}
+              <AppRouter />
             </div>
           </Suspense>
         </div>
