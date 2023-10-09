@@ -2,7 +2,7 @@ import { useCallback, useMemo, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
-import { ListBox } from '@/shared/ui/Popups';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
 import { AppRoutes } from '@/shared/const/router';
 
 import { Country } from '../../model/types/country';

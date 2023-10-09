@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import { classNames } from '@/shared/lib/classNames';
 import ViewSmallIcon from '@/shared/assets/icons/view-small.svg';
 import ViewBigIcon from '@/shared/assets/icons/view-big.svg';
