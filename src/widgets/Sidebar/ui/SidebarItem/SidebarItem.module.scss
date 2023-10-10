@@ -9,13 +9,17 @@
   transition: 0.2s opacity;
 }
 
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .collapsed {
   .link {
     opacity: 0;
     width: 0;
+  }
+}
+
+.collapsedRedesigned {
+  .link {
+    opacity: 0;
+    width: 0;
+    margin: 0;
   }
 }
