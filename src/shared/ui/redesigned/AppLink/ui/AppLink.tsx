@@ -1,5 +1,5 @@
 import { ForwardedRef, forwardRef, ReactNode } from 'react';
-import { Link, LinkProps } from 'react-router-dom';
+import { LinkProps, NavLink } from 'react-router-dom';
 
 import { classNames } from '@/shared/lib/classNames';
 
@@ -11,19 +11,29 @@ interface AppLinkProps extends LinkProps {
   className?: string;
   variant?: AppLinkVariant;
   children?: ReactNode;
+  activeClassName?: string;
 }
 
 export const AppLink = forwardRef((props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
-  const { to, className, children, variant = 'primary', ...otherProps } = props;
+  const {
+    to,
+    className,
+    children,
+    variant = 'primary',
+    activeClassName = '',
+    ...otherProps
+  } = props;
 
   return (
-    <Link
+    <NavLink
       to={to}
       ref={ref}
-      className={classNames(cls.appLink, {}, [className, cls[variant]])}
+      className={({ isActive }) =>
+        classNames(cls.appLink, { [activeClassName]: isActive }, [className, cls[variant]])
+      }
       {...otherProps}
     >
       {children}
-    </Link>
+    </NavLink>
   );
 });
