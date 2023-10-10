@@ -13,7 +13,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppRoutes } from '@/shared/const/router';
 
 import { ValidateProfileError } from '../../model/consts/consts';

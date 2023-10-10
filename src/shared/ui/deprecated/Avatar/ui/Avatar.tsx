@@ -3,7 +3,7 @@ import { CSSProperties, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames';
 
 import { Skeleton } from '../../Skeleton';
-import { AppImage } from '../../AppImage';
+import { AppImage } from '../../../redesigned/AppImage';
 import AvatarErrorFallback from '../../../../assets/icons/avatarErrorFallback.svg';
 import cls from './Avatar.module.scss';
 import { Icon } from '../../Icon';

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/classNames';
 import { getArticleDetails } from '@/entities/Article';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 import { getCanEditArticle } from '../../model/selectors/article';

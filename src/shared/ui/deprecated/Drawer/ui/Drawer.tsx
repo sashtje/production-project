@@ -3,8 +3,8 @@ import { ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames';
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 
-import { Portal } from '../../Portal';
-import { Overlay } from '../../Overlay';
+import { Portal } from '../../../redesigned/Portal';
+import { Overlay } from '../../../redesigned/Overlay';
 import cls from './Drawer.module.scss';
 
 interface DrawerProps {
