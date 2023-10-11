@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Listbox as HListBox } from '@headlessui/react';
 
@@ -10,24 +10,24 @@ import { Button } from '../../../../Button';
 import cls from './ListBox.module.scss';
 import commonCls from '../../../styles/popup.module.scss';
 
-export interface ListBoxItem {
-  value: string;
+export interface ListBoxItem<T extends string> {
+  value: T;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
+interface ListBoxProps<T extends string> {
   className?: string;
-  items?: ListBoxItem[];
-  value?: string;
+  items?: ListBoxItem<T>[];
+  value?: T;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
   label?: string;
 }
 
-export const ListBox = (props: ListBoxProps) => {
+export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
   const {
     className,
     items,
@@ -39,6 +39,8 @@ export const ListBox = (props: ListBoxProps) => {
     onChange,
   } = props;
   const { t } = useTranslation();
+
+  const selectedItem = useMemo(() => items?.find((item) => item.value === value), [items, value]);
 
   return (
     <HStack gap="4">
@@ -52,7 +54,9 @@ export const ListBox = (props: ListBoxProps) => {
         onChange={onChange}
       >
         <HListBox.Button as="div" className={commonCls.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button variant="filled" disabled={readonly}>
+            {selectedItem?.content ?? defaultValue}
+          </Button>
         </HListBox.Button>
 
         <HListBox.Options
@@ -72,11 +76,12 @@ export const ListBox = (props: ListBoxProps) => {
                     {
                       [commonCls.active]: active,
                       [commonCls.disabled]: item.disabled,
+                      [commonCls.selected]: selected,
                     },
                     [],
                   )}
                 >
-                  {selected && '!!!'}
+                  {selected}
                   {item.content}
                 </li>
               )}

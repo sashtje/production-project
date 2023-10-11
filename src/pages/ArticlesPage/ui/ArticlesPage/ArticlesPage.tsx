@@ -13,6 +13,7 @@ import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts';
 
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
@@ -59,7 +60,7 @@ export const ArticlesPage = memo((props: ArticlesPageProps) => {
             </Page>
           }
           left={<ViewSelectorContainer />}
-          right={<div>67890</div>}
+          right={<FiltersContainer />}
         />
       }
       off={

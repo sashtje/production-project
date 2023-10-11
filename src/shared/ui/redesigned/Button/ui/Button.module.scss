@@ -16,6 +16,14 @@
   outline: none;
 }
 
+.filled {
+  background: var(--light-bg-redesigned);
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 34px;
+}
+
 .m {
   font: var(--font-m-redesigned);
 }

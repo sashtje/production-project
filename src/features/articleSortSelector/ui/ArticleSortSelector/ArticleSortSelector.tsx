@@ -5,6 +5,10 @@ import { classNames } from '@/shared/lib/classNames';
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
 import { SortOrder } from '@/shared/types/sort';
 import { ArticleSortField } from '@/entities/Article';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleSortSelector.module.scss';
 
@@ -53,22 +57,36 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   );
 
   return (
-    <div className={classNames(cls.articleSortSelector, {}, [className])}>
-      <Select<ArticleSortField>
-        label={t('Сортировать ПО')}
-        options={sortFieldOptions}
-        value={sort}
-        onChange={onChangeSort}
-      />
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <VStack gap="16" className={classNames(cls.articleSortSelectorRedesigned, {}, [className])}>
+          <Text text={t('Сортировать ПО')} />
 
-      <Select<SortOrder>
-        options={orderOptions}
-        label={t('по')}
-        value={order}
-        onChange={onChangeOrder}
-        className={cls.order}
-      />
-    </div>
+          <ListBox items={sortFieldOptions} value={sort} onChange={onChangeSort} />
+
+          <ListBox items={orderOptions} value={order} onChange={onChangeOrder} />
+        </VStack>
+      }
+      off={
+        <div className={classNames(cls.articleSortSelector, {}, [className])}>
+          <Select<ArticleSortField>
+            label={t('Сортировать ПО')}
+            options={sortFieldOptions}
+            value={sort}
+            onChange={onChangeSort}
+          />
+
+          <Select<SortOrder>
+            options={orderOptions}
+            label={t('по')}
+            value={order}
+            onChange={onChangeOrder}
+            className={cls.order}
+          />
+        </div>
+      }
+    />
   );
 });
 
