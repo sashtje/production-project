@@ -29,7 +29,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     >
       <Text size={TextSize.L} title={t('Рекомендуем')} />
 
-      <ArticleList articles={articles} target="_blank" virtualized={false} />
+      <ArticleList articles={articles} target="_blank" />
     </VStack>
   );
 });
