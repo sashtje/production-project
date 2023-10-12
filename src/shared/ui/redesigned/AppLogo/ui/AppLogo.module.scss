@@ -38,3 +38,7 @@
   opacity: 0.6;
   pointer-events: none;
 }
+
+.appLogo {
+  z-index: var(--app-logo-z-index);
+}
