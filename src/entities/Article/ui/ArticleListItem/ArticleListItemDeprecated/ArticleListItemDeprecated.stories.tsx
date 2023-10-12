@@ -2,10 +2,10 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticleView } from '../../model/consts/consts';
 import { article } from '../../mocks/data';
-import { ArticleListItem } from './ArticleListItem';
+import { ArticleListItem } from './ArticleListItemDeprecated';
 
 export default {
-  title: 'entities/Article/ArticleListItem',
+  title: 'entities/Article/ArticleListItemRedesigned',
   component: ArticleListItem,
   argTypes: {
     backgroundColor: { control: 'color' },
