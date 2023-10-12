@@ -8,7 +8,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
-import { ProfileCard } from '@/entities/Profile';
+import { ProfileCardFactory } from '@/entities/Profile';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -139,7 +139,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             />
           ))}
 
-        <ProfileCard
+        <ProfileCardFactory
           data={form}
           isLoading={isLoading}
           error={error}

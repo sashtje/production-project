@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 
-import { classNames, Mods } from '@/shared/lib/classNames';
-import { Text, TextTheme, TextAlign } from '@/shared/ui/deprecated/Text';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Loader } from '@/shared/ui/deprecated/Loader';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { classNames } from '@/shared/lib/classNames';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { AppRoutes } from '@/shared/const/router';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
@@ -45,21 +45,33 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeCurrency,
     onChangeCountry,
   } = props;
-  const { t } = useTranslation(AppRoutes.PROFILE);
-
-  const mods: Mods = {
-    [cls.editing]: !readonly,
-  };
+  const { t } = useTranslation('profile');
 
   if (isLoading) {
     return (
-      <HStack
-        className={classNames(cls.profileCard, {}, [className, cls.loading])}
-        justify="center"
-        max
-      >
-        <Loader />
-      </HStack>
+      <Card className={classNames(cls.profileCard, {}, [className])} fullwidth padding="24">
+        <VStack gap="32" max>
+          <HStack justify="center" max>
+            <Skeleton width={120} height={120} borderRadius="50%" />
+          </HStack>
+
+          <HStack gap="24" max>
+            <VStack gap="16" max>
+              <Skeleton width="100%" height={38} />
+              <Skeleton width="100%" height={38} />
+              <Skeleton width="100%" height={38} />
+              <Skeleton width="100%" height={38} />
+            </VStack>
+
+            <VStack gap="16" max>
+              <Skeleton width="100%" height={38} />
+              <Skeleton width="100%" height={38} />
+              <Skeleton width="100%" height={38} />
+              <Skeleton width="100%" height={38} />
+            </VStack>
+          </HStack>
+        </VStack>
+      </Card>
     );
   }
 
@@ -71,63 +83,74 @@ export const ProfileCard = (props: ProfileCardProps) => {
         max
       >
         <Text
-          theme={TextTheme.ERROR}
+          variant="error"
           title={t('Произошла ошибка при загрузке профиля')}
           text={t('Попробуйте обновить страницу')}
-          align={TextAlign.CENTER}
+          align="center"
         />
       </HStack>
     );
   }
 
   return (
-    <VStack className={classNames(cls.profileCard, mods, [className])} gap="8" max>
-      {data?.avatar && (
+    <Card className={classNames(cls.profileCard, {}, [className])} fullwidth padding="24">
+      <VStack gap="32">
         <HStack justify="center" max>
-          <Avatar src={data?.avatar} alt={t('Аватар')} />
+          <Avatar src={data?.avatar} alt={t('Аватар')} size={120} />
         </HStack>
-      )}
 
-      <Input
-        value={data?.first}
-        placeholder={t('Ваше имя')}
-        onChange={onChangeFirstname}
-        readonly={readonly}
-        data-testid="ProfileCard.firstname"
-      />
-      <Input
-        value={data?.lastname}
-        placeholder={t('Ваше фамилия')}
-        onChange={onChangeLastname}
-        readonly={readonly}
-        data-testid="ProfileCard.lastname"
-      />
-      <Input
-        value={data?.age}
-        placeholder={t('Ваш возраст')}
-        onChange={onChangeAge}
-        readonly={readonly}
-      />
-      <Input
-        value={data?.city}
-        placeholder={t('Город')}
-        onChange={onChangeCity}
-        readonly={readonly}
-      />
-      <Input
-        value={data?.username}
-        placeholder={t('Имя пользователя')}
-        onChange={onChangeUsername}
-        readonly={readonly}
-      />
-      <Input
-        value={data?.avatar}
-        placeholder={t('Аватар')}
-        onChange={onChangeAvatar}
-        readonly={readonly}
-      />
-      <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
-      <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
-    </VStack>
+        <HStack gap="24" max>
+          <VStack gap="16" max>
+            <Input
+              value={data?.first}
+              label={t('Имя')}
+              onChange={onChangeFirstname}
+              readonly={readonly}
+              data-testid="ProfileCard.firstname"
+            />
+            <Input
+              value={data?.lastname}
+              label={t('Фамилия')}
+              onChange={onChangeLastname}
+              readonly={readonly}
+              data-testid="ProfileCard.lastname"
+            />
+            <Input
+              value={data?.age}
+              label={t('Возраст')}
+              onChange={onChangeAge}
+              readonly={readonly}
+            />
+            <Input
+              value={data?.city}
+              label={t('Город')}
+              onChange={onChangeCity}
+              readonly={readonly}
+            />
+          </VStack>
+
+          <VStack gap="16" max>
+            <Input
+              value={data?.username}
+              label={t('Имя пользователя')}
+              onChange={onChangeUsername}
+              readonly={readonly}
+            />
+            <Input
+              value={data?.avatar}
+              label={t('Аватар')}
+              onChange={onChangeAvatar}
+              readonly={readonly}
+            />
+            <CurrencySelect
+              value={data?.currency}
+              onChange={onChangeCurrency}
+              readonly={readonly}
+            />
+            <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
+          </VStack>
+        </HStack>
+      </VStack>
+    </Card>
   );
 };

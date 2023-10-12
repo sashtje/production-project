@@ -7,7 +7,7 @@ import { DropdownDirection } from '@/shared/types/ui';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 import { Icon } from '../../../../Icon';
-import { HStack } from '../../../../../redesigned/Stack';
+import { HStack } from '../../../../Stack';
 import { Button } from '../../../../Button';
 import cls from './ListBox.module.scss';
 import commonCls from '../../../styles/popup.module.scss';
@@ -46,7 +46,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 
   return (
     <HStack gap="4">
-      {label && <span>{`${label}>`}</span>}
+      {label && <span>{label}</span>}
 
       <HListBox
         disabled={readonly}

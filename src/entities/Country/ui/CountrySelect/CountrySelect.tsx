@@ -2,8 +2,10 @@ import { useCallback, useMemo, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { AppRoutes } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { Country } from '../../model/types/country';
 
@@ -36,15 +38,32 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
   );
 
   return (
-    <ListBox
-      className={classNames('', {}, [className])}
-      defaultValue={t('Страна')}
-      label={t('Страна')}
-      value={value}
-      items={countryOptions}
-      onChange={onChangeHandler}
-      readonly={readonly}
-      direction="top-right"
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <ListBox
+          className={classNames('', {}, [className])}
+          defaultValue={t('Страна')}
+          label={t('Страна')}
+          value={value}
+          items={countryOptions}
+          onChange={onChangeHandler}
+          readonly={readonly}
+          direction="top-right"
+        />
+      }
+      off={
+        <ListBoxDeprecated
+          className={classNames('', {}, [className])}
+          defaultValue={t('Страна')}
+          label={t('Страна')}
+          value={value}
+          items={countryOptions}
+          onChange={onChangeHandler}
+          readonly={readonly}
+          direction="top-right"
+        />
+      }
     />
   );
 });

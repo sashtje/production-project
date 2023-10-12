@@ -19,5 +19,8 @@
   "Некорректный возраст": "Incorrect age",
   "Некорректная страна": "Incorrect country",
   "Profile page": "Profile",
-  "Профиль не найден": "Profile not found"
+  "Профиль не найден": "Profile not found",
+  "Имя": "Name",
+  "Фамилия": "Surname",
+  "Возраст": "Age"
 }
