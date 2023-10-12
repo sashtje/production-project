@@ -9,14 +9,14 @@ body {
   color: var(--primary-color);
 }
 
-body.redesigned {
-  font: var(--font-m-redesigned);
-  color: var(--text-redesigned);
-}
-
 * {
   scrollbar-color: var(--card-bg) var(--inverted-primary-color);
   scrollbar-width: 10px;
+}
+
+body.redesigned {
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
 }
 
 .app {

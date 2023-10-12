@@ -14,57 +14,28 @@
 }
 
 .SMALL {
-  width: 230px;
-  transition: 0.2s;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-    transform: scale(1.01);
-
-    .date {
-      display: block;
-    }
-  }
-
-  .imageWrapper {
-    width: 200px;
-    height: 200px;
-    position: relative;
+  .card {
+    width: 240px;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
     object-fit: cover;
+    height: 140px;
   }
 
-  .infoWrapper {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
+  .info {
+    padding: 8px 8px 16px;
+    height: 100%;
   }
 
-  .types p {
-    width: 115px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .views {
-    margin-left: auto;
-    margin-right: 8px;
-  }
-
-  .title {
-    margin-top: 8px;
-
-    p {
-      width: 200px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  .footer {
+    height: 100%;
+    justify-content: flex-end;
   }
 }

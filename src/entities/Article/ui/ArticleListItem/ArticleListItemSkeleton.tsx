@@ -77,16 +77,25 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
       feature="isAppRedesigned"
       on={
         <div className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
-          <Card className={cls.card}>
-            <div className={cls.imageWrapper}>
-              <Skeleton className={cls.img} width={200} height={200} />
-            </div>
+          <Card padding="0" className={cls.card} borderRadius="round">
+            <Skeleton className={cls.img} width={240} height={140} />
 
-            <div className={cls.infoWrapper}>
-              <Skeleton width={130} height={16} />
-            </div>
+            <VStack className={cls.info} gap="4">
+              <Skeleton width={130} height={24} />
 
-            <Skeleton className={cls.title} width={150} height={16} />
+              <VStack gap="4" className={cls.footer} max>
+                <HStack justify="between" max>
+                  <Skeleton width={100} height={24} />
+
+                  <Skeleton width={40} height={24} />
+                </HStack>
+
+                <HStack gap="4">
+                  <Skeleton width={30} height={30} borderRadius="50%" />
+                  <Skeleton width={40} height={24} />
+                </HStack>
+              </VStack>
+            </VStack>
           </Card>
         </div>
       }

@@ -20,6 +20,12 @@ Primary.args = {
   children: 'Text',
 };
 
+export const Filled = Template.bind({});
+Filled.args = {
+  children: 'Text',
+  variant: 'filled',
+};
+
 export const Clear = Template.bind({});
 Clear.args = {
   children: 'Text',

@@ -1,18 +1,20 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleView } from '../../model/consts/consts';
-import { article } from '../../mocks/data';
-import { ArticleListItem } from './ArticleListItemDeprecated';
+import { ArticleView } from '../../../model/consts/consts';
+import { article } from '../../../mocks/data';
+import { ArticleListItemDeprecated } from './ArticleListItemDeprecated';
 
 export default {
-  title: 'entities/Article/ArticleListItemRedesigned',
-  component: ArticleListItem,
+  title: 'entities/Article/ArticleListItemDeprecated',
+  component: ArticleListItemDeprecated,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleListItem>;
+} as ComponentMeta<typeof ArticleListItemDeprecated>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItemDeprecated> = (args) => (
+  <ArticleListItemDeprecated {...args} />
+);
 
 export const NormalSmall = Template.bind({});
 NormalSmall.args = {

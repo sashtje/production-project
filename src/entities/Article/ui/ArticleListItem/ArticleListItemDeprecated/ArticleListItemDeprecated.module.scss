@@ -1,4 +1,6 @@
 .BIG {
+  margin-bottom: 30px;
+
   .views {
     margin-left: auto;
   }
@@ -39,9 +41,11 @@
 }
 
 .SMALL {
-  width: 230px;
-  transition: 0.2s;
-  cursor: pointer;
+  .card {
+    width: 230px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
 
   .date {
     position: absolute;

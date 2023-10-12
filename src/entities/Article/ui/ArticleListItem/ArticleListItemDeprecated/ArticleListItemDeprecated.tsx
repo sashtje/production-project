@@ -45,7 +45,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
 
     return (
       <div
-        data-testid="ArticleListItemRedesigned"
+        data-testid="ArticleListItem"
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>
@@ -79,7 +79,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
 
   return (
     <AppLink
-      data-testid="ArticleListItemRedesigned"
+      data-testid="ArticleListItem"
       target={target}
       to={getRouteArticlesDetails(article.id)}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
