@@ -20,7 +20,9 @@ import {
   getRouteMain,
   getRouteNotFound,
   getRouteProfile,
+  getRouteSettings,
 } from '@/shared/const/router';
+import { SettingsPage } from '@/pages/SettingsPage/ui/SettingsPage';
 
 import { AppRoutesProps } from './types';
 
@@ -63,6 +65,10 @@ export const routerConfig: Record<AppRoutes, AppRoutesProps> = {
     element: <AdminPanelPage />,
     authOnly: true,
     roles: [UserRole.ADMIN, UserRole.MANAGER],
+  },
+  [AppRoutes.SETTINGS]: {
+    path: getRouteSettings(),
+    element: <SettingsPage />,
   },
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),

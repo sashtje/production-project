@@ -8,7 +8,7 @@ import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
-import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile, getRouteSettings } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 
 interface AvatarDropdownProps {
@@ -43,6 +43,10 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           },
         ]
       : []),
+    {
+      content: t('Настройки'),
+      href: getRouteSettings(),
+    },
     {
       content: t('Профиль'),
       href: getRouteProfile(authData.id),

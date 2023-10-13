@@ -188,5 +188,6 @@ Feature state can take only one of two values: **on** or **off**.
 - [notificationButton](/src/features/notificationButton)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 - [UI](/src/features/UI)
+- [uiDesignSwitcher](/src/features/uiDesignSwitcher)
 
 ----
