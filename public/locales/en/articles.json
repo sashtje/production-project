@@ -27,5 +27,7 @@
   "Оставьте свой отзыв о статье": "Leave your feedback on the article",
   "Оценка статей скоро появится!": "Article ratings coming soon!",
   "Добро пожаловать на страницу статей": "Welcome to the articles page",
-  "Здесь Вы можете искать и просматривать статьи на различные темы": "Here you can search and view articles on various topics"
+  "Здесь Вы можете искать и просматривать статьи на различные темы": "Here you can search and view articles on various topics",
+  "Просмотров_one": "{{count}} view",
+  "Просмотров_other": "{{count}} views"
 }
