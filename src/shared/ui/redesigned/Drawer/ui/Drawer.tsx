@@ -2,9 +2,10 @@ import { ReactNode, useCallback, useEffect } from 'react';
 
 import { classNames } from '@/shared/lib/classNames';
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { toggleFeatures } from '@/shared/lib/features';
 
-import { Portal } from '../../../redesigned/Portal';
-import { Overlay } from '../../../redesigned/Overlay';
+import { Portal } from '../../Portal';
+import { Overlay } from '../../Overlay';
 import cls from './Drawer.module.scss';
 
 interface DrawerProps {
@@ -73,7 +74,16 @@ const DrawerContent = (props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.drawer, { [cls.opened]: isOpen }, [className])}>
+      <div
+        className={classNames(cls.drawer, { [cls.opened]: isOpen }, [
+          className,
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.drawerNew,
+            off: () => cls.drawerOld,
+          }),
+        ])}
+      >
         <Overlay onClick={close} />
 
         <Spring.a.div
@@ -98,9 +108,6 @@ const DrawerAsync = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-/**
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => (
   <AnimationProvider>
     <DrawerAsync {...props} />
