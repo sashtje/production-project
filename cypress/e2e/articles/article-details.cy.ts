@@ -14,7 +14,7 @@ describe('article details testing', () => {
   });
 
   it('should see a content of the article', () => {
-    cy.getByTestId('ArticleDetails.title').should('exist');
+    cy.getByTestId('ArticleDetailsDeprecated.title').should('exist');
   });
 
   it('should see a list of recommendations', () => {
@@ -22,7 +22,7 @@ describe('article details testing', () => {
   });
 
   it('leaves a comment', () => {
-    cy.getByTestId('ArticleDetails.title');
+    cy.getByTestId('ArticleDetailsDeprecated.title');
     cy.getByTestId('AddCommentForm').scrollIntoView();
 
     cy.addComment('text');
@@ -33,7 +33,7 @@ describe('article details testing', () => {
 
   it('leaves a rate', () => {
     // cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
-    cy.getByTestId('ArticleDetails.title');
+    cy.getByTestId('ArticleDetailsDeprecated.title');
     cy.getByTestId('RatingCard').scrollIntoView();
 
     cy.setRate(5, 'feedback');

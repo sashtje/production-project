@@ -5,7 +5,7 @@ Article Entity for Blog
 #### Public api
 
 - Components
-    - `ArticleDetails` - Component with article information
+    - `ArticleDetailsDeprecated` - Component with article information
     - `ArticleList` -  Component with list of articles
     - `ArticleViewSelector` - Component - switcher for displaying a list of articles (tile, list)
     - `ArticleSortSelector` - Component with a choice of sorting for a list of articles

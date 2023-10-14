@@ -1,7 +1,9 @@
 import { memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames';
-import { Code } from '@/shared/ui/deprecated/Code';
+import { Code as CodeDeprecated } from '@/shared/ui/deprecated/Code';
+import { Code } from '@/shared/ui/redesigned/Code';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { ArticleCodeBlock } from '../../model/types/article';
 import cls from './ArticleCodeBlockComponent.module.scss';
@@ -15,9 +17,19 @@ export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentP
   const { className, block } = props;
 
   return (
-    <div className={classNames(cls.articleCodeBlockComponent, {}, [className])}>
-      <Code text={block.code} />
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <div className={classNames(cls.articleCodeBlockComponent, {}, [className])}>
+          <Code text={block.code} />
+        </div>
+      }
+      off={
+        <div className={classNames(cls.articleCodeBlockComponent, {}, [className])}>
+          <CodeDeprecated text={block.code} />
+        </div>
+      }
+    />
   );
 });
 

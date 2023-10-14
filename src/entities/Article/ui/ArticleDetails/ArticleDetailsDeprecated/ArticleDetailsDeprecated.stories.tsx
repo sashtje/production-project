@@ -2,18 +2,20 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { ArticleDetails } from './ArticleDetails';
-import { article } from '../../mocks/data';
+import { ArticleDetailsDeprecated } from './ArticleDetailsDeprecated';
+import { article } from '../../../mocks/data';
 
 export default {
-  title: 'entities/Article/ArticleDetails',
-  component: ArticleDetails,
+  title: 'entities/Article/ArticleDetailsDeprecated',
+  component: ArticleDetailsDeprecated,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleDetails>;
+} as ComponentMeta<typeof ArticleDetailsDeprecated>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsDeprecated> = (args) => (
+  <ArticleDetailsDeprecated {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
