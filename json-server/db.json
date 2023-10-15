@@ -889,6 +889,13 @@
       "userId": "1",
       "rate": 1,
       "id": "NAhM_Ux"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "класс!",
+      "id": "50IdxCA"
     }
   ],
   "profile-ratings": [
