@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react';
 
 import { Theme } from '@/shared/const/theme';
+import { toggleFeatures } from '@/shared/lib/features';
 
-import { toggleFeatures } from '../../features';
 import { ThemeContext } from '../../context/ThemeContext';
 
 interface UseThemeResult {
@@ -20,8 +20,6 @@ export function useTheme(): UseThemeResult {
       on: () => 'redesigned',
       off: () => '',
     })} ${theme || Theme.LIGHT}`;
-
-    (document.childNodes[1] as HTMLElement).className = theme || Theme.LIGHT;
   }, [theme]);
 
   const toggleTheme = (saveAction: (theme: Theme) => void) => {
