@@ -2,11 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { AppRoutes } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ProfilePageProps {
   className?: string;
@@ -18,7 +20,13 @@ export const ProfilePage = (props: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>();
 
   if (!id) {
-    return <Text text={t('Профиль не найден')} />;
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={<Text text={t('Профиль не найден')} />}
+        off={<TextDeprecated text={t('Профиль не найден')} />}
+      />
+    );
   }
 
   return (

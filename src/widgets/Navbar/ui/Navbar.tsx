@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { LoginModal } from '@/features/authByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
@@ -66,13 +67,31 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(cls.navbar, {}, [className])}>
-      <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
-        {t('Войти')}
-      </Button>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <header className={classNames(cls.navbarRedesigned, {}, [className])}>
+          <Button variant="clear" className={cls.links} onClick={onShowModal}>
+            {t('Войти')}
+          </Button>
 
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-    </header>
+          {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+        </header>
+      }
+      off={
+        <header className={classNames(cls.navbar, {}, [className])}>
+          <ButtonDeprecated
+            theme={ButtonTheme.CLEAR_INVERTED}
+            className={cls.links}
+            onClick={onShowModal}
+          >
+            {t('Войти')}
+          </ButtonDeprecated>
+
+          {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+        </header>
+      }
+    />
   );
 });
 

@@ -49,7 +49,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <Card className={classNames(cls.profileCard, {}, [className])} fullwidth padding="24">
+      <Card
+        className={classNames(cls.profileCard, {}, [className])}
+        fullwidth
+        padding="24"
+        borderRadius="partial"
+      >
         <VStack gap="32" max>
           <HStack justify="center" max>
             <Skeleton width={120} height={120} borderRadius="50%" />
@@ -77,23 +82,35 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (error) {
     return (
-      <HStack
-        className={classNames(cls.profileCard, {}, [className, cls.error])}
-        justify="center"
-        max
+      <Card
+        className={classNames(cls.profileCard, {}, [className])}
+        fullwidth
+        padding="24"
+        borderRadius="partial"
       >
-        <Text
-          variant="error"
-          title={t('Произошла ошибка при загрузке профиля')}
-          text={t('Попробуйте обновить страницу')}
-          align="center"
-        />
-      </HStack>
+        <HStack
+          className={classNames(cls.profileCard, {}, [className, cls.error])}
+          justify="center"
+          max
+        >
+          <Text
+            variant="error"
+            title={t('Произошла ошибка при загрузке профиля')}
+            text={t('Попробуйте обновить страницу')}
+            align="center"
+          />
+        </HStack>
+      </Card>
     );
   }
 
   return (
-    <Card className={classNames(cls.profileCard, {}, [className])} fullwidth padding="24">
+    <Card
+      className={classNames(cls.profileCard, {}, [className])}
+      fullwidth
+      padding="24"
+      borderRadius="partial"
+    >
       <VStack gap="32">
         <HStack justify="center" max>
           <Avatar src={data?.avatar} alt={t('Аватар')} size={120} />

@@ -7,7 +7,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { ProfileCardFactory } from '@/entities/Profile';
 import {
   DynamicModuleLoader,
@@ -15,6 +16,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppRoutes } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -126,16 +128,29 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="8" max className={classNames('', {}, [className])}>
+      <VStack gap="24" max className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
 
         {!!validateErrors?.length &&
           validateErrors.map((err) => (
-            <Text
-              key={err}
-              theme={TextTheme.ERROR}
-              text={validateErrorTranslates[err]}
-              data-testid="EditableProfileCard.Error"
+            <ToggleFeatures
+              feature="isAppRedesigned"
+              on={
+                <Text
+                  key={err}
+                  variant="error"
+                  text={validateErrorTranslates[err]}
+                  data-testid="EditableProfileCard.Error"
+                />
+              }
+              off={
+                <TextDeprecated
+                  key={err}
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslates[err]}
+                  data-testid="EditableProfileCard.Error"
+                />
+              }
             />
           ))}
 
