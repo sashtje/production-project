@@ -47,6 +47,7 @@ export const StarRating = memo((props: StarRatingProps) => {
     <div className={classNames(cls.starRating, {}, [className])}>
       {stars.map((starNumber) => (
         <ToggleFeatures
+          key={starNumber}
           feature="isAppRedesigned"
           on={
             <Icon

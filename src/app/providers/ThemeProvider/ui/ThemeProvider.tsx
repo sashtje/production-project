@@ -19,6 +19,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
     if (!isThemeInited && !initialTheme && defaultTheme) {
       setTheme(defaultTheme);
       setThemeInited(true);
+      (document.childNodes[1] as HTMLElement).className = defaultTheme;
     }
   }, [defaultTheme, initialTheme, isThemeInited]);
 

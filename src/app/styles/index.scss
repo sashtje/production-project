@@ -10,7 +10,7 @@ body {
 }
 
 * {
-  scrollbar-color: var(--card-bg) var(--inverted-primary-color);
+  scrollbar-color: var(--icon-redesigned) var(--light-bg-redesigned);
   scrollbar-width: 10px;
 }
 
@@ -39,11 +39,11 @@ body.redesigned {
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--inverted-primary-color);
+  background-color: var(--icon-redesigned);
   border-radius: 20px;
-  border: 3px solid var(--primary-color);
+  border: 3px solid var(--accent-redesigned);
 }

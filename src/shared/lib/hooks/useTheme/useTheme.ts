@@ -20,6 +20,8 @@ export function useTheme(): UseThemeResult {
       on: () => 'redesigned',
       off: () => '',
     })} ${theme || Theme.LIGHT}`;
+
+    (document.childNodes[1] as HTMLElement).className = theme || Theme.LIGHT;
   }, [theme]);
 
   const toggleTheme = (saveAction: (theme: Theme) => void) => {
