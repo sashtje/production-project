@@ -21,27 +21,27 @@ interface ArticleViewSelectorProps {
   onViewClick?: (view: ArticleView) => void;
 }
 
-const viewTypes = [
-  {
-    view: ArticleView.SMALL,
-    icon: toggleFeatures({
-      name: 'isAppRedesigned',
-      on: () => ViewSmallIcon,
-      off: () => ViewSmallIconDeprecated,
-    }),
-  },
-  {
-    view: ArticleView.BIG,
-    icon: toggleFeatures({
-      name: 'isAppRedesigned',
-      on: () => ViewBigIcon,
-      off: () => ViewBigIconDeprecated,
-    }),
-  },
-];
-
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   const { className, view, onViewClick } = props;
+
+  const viewTypes = [
+    {
+      view: ArticleView.SMALL,
+      icon: toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => ViewSmallIcon,
+        off: () => ViewSmallIconDeprecated,
+      }),
+    },
+    {
+      view: ArticleView.BIG,
+      icon: toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => ViewBigIcon,
+        off: () => ViewBigIconDeprecated,
+      }),
+    },
+  ];
 
   const onClick = (newView: ArticleView) => () => {
     onViewClick?.(newView);
