@@ -2,6 +2,10 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Country } from '@/entities/Country/testing';
 import { Currency } from '@/entities/Currency/testing';
+import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -15,8 +19,7 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+const profileArgs = {
   data: {
     username: 'admin',
     age: 22,
@@ -29,6 +32,9 @@ Primary.args = {
   },
 };
 
+export const Primary = Template.bind({});
+Primary.args = profileArgs;
+
 export const WithError = Template.bind({});
 WithError.args = {
   error: 'true',
@@ -38,3 +44,19 @@ export const Loading = Template.bind({});
 Loading.args = {
   isLoading: true,
 };
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = profileArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
+
+export const WithErrorRedesigned = Template.bind({});
+WithErrorRedesigned.args = {
+  error: 'true',
+};
+WithErrorRedesigned.decorators = [FeaturesFlagsDecorator({ isAppRedesigned: true })];
+
+export const LoadingRedesigned = Template.bind({});
+LoadingRedesigned.args = {
+  isLoading: true,
+};
+LoadingRedesigned.decorators = [FeaturesFlagsDecorator({ isAppRedesigned: true })];
