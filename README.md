@@ -186,6 +186,7 @@ Feature state can take only one of two values: **on** or **off**.
 - [editableProfileCard](/src/features/editableProfileCard)
 - [LangSwitcher](/src/features/LangSwitcher)
 - [notificationButton](/src/features/notificationButton)
+- [scrollToTopButton](/src/features/scrollToTopButton)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 - [UI](/src/features/UI)
 - [uiDesignSwitcher](/src/features/uiDesignSwitcher)
